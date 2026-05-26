@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Indian Menu — Didoo's Evergreen</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/menu.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- iOS top safe area -->
+  <div class="safe-top"></div>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <button class="btn-back" aria-label="Go back">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Back
+    </button>
+
+    <!-- ev-logo: 95×32, flex row center, pad 0 12px -->
+    <div class="ev-logo" aria-label="Didoo's Evergreen">
+      <div class="logo-stack">
+        <img
+          class="logo-didoos-img"
+          src="https://www.figma.com/api/mcp/asset/09dd085e-7286-4a66-a9c4-5b9d3f111dd4"
+          alt="Didoo's"
+        />
+        <div class="logo-evergreen-wrap">
+          <img
+            class="logo-evergreen-img"
+            src="https://www.figma.com/api/mcp/asset/d097ef31-20e3-42d2-abf9-46b8db3db95a"
+            alt="Evergreen"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TAB BAR -->
+  <nav class="tab-bar" aria-label="Menu categories">
+    <button class="tab active">Indian</button>
+    <button class="tab inactive">Chinese</button>
+    <button class="tab inactive">BBQ</button>
+    <button class="tab inactive">Intercontinental</button>
+    <button class="tab inactive">Italian</button>
+    <button class="tab inactive">Breads</button>
+    <button class="tab inactive">Thalis</button>
+  </nav>
+
+  <!-- SCROLLABLE MENU LIST -->
+  <main class="scroll-area" aria-label="Indian menu items">
+
+    <div class="subheading">
+      <span class="subheading-text">INDIAN</span>
+      <div class="subheading-line"></div>
+    </div>
+
+    <!-- ── VEG ITEMS ────────────────────────────────────── -->
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Dal Makhani</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 250</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Yellow Dal Fry</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 230</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Shahi Paneer</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 370</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Kadhai Paneer</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 380</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Paneer Butter Masala</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 370</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Channa Masala</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 260</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Veg Mix Masala</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 260</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Veg Korma</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 370</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Jeera Rice</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 170</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Plain Rice</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 110</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg" aria-label="Vegetarian"></span></div>
+        <span class="item-name">Veg Raita</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 120</span></div>
+    </div>
+
+    <!-- ── NON-VEG ITEMS (with qty stepper) ────────────── -->
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Chicken Curry</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 480</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Kadhai Chicken</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 490</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Butter Chicken</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 470</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Lamb Curry</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 550</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Lamb Curry Masala</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 570</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Chicken Curry Masala</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 520</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg" role="button" tabindex="0">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg" aria-label="Non-Vegetarian"></span></div>
+        <span class="item-name">Egg Curry</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 350</span>
+        <div class="add-ctrl" aria-label="Quantity: 1">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <div class="diet-badge veg-badge active" id="badgeVeg" role="status" aria-live="polite">
+      <span>Veg</span>
+    </div>
+    <div class="diet-badge nonveg-badge" id="badgeNonVeg" role="status" aria-live="polite">
+      <span>Non-Veg</span>
+    </div>
+  </div>
+
+  <!-- iOS bottom safe area -->
+  <div class="safe-bottom"></div>
+</div>
+
+<!-- Scripts -->
+<script src="../js/navigation.js"></script>
+<script src="../js/menu.js"></script>
+</body>
+</html>

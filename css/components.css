@@ -1,0 +1,210 @@
+/* ============================================================
+   components.css — Shared, reusable UI components
+   Top Bar · Logo · Back Button · Tab Bar · Bottom Bar · Badges
+   ============================================================ */
+
+
+/* ── TOP BAR ──────────────────────────────────────────────── */
+/* Figma: h-56px, pad 12px 16px, justify-content: space-between */
+
+.top-bar {
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp3) var(--sp4);
+}
+
+
+/* ── BACK BUTTON ──────────────────────────────────────────── */
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: var(--sp1);
+  background: var(--ev-bar-bg);
+  border: var(--ev-border) solid var(--ev-lime);
+  border-radius: var(--ev-radius-full);
+  padding: var(--sp1) var(--sp3);
+  color: var(--ev-lime);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.48px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.btn-back:active { opacity: 0.7; }
+
+.btn-back svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--ev-lime);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+
+/* ── EV-LOGO ──────────────────────────────────────────────── */
+/* Figma: 95×32px, flex row, justify-content: center,
+   align-items: center, padding: 0 12px, overflow: clip      */
+
+.ev-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--sp3);
+  width: 95px;
+  height: 32px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  overflow: hidden;
+}
+
+/* Inner flex-column stack */
+.logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+/* "Didoo's" — Figma: 34.775×8.558px, mb-[-6px] */
+.logo-didoos-img {
+  width: 34.775px;
+  height: 8.558px;
+  display: block;
+  flex-shrink: 0;
+  margin-bottom: -6px; /* Figma mb-[-6px]: pulls Evergreen up tight */
+}
+
+/* "Evergreen" wrapper — Figma: pl-12px, w-full */
+.logo-evergreen-wrap {
+  padding-left: 12px;
+  width: 100%;
+}
+
+/* "Evergreen" vector — Figma: 53.422×20.997px */
+.logo-evergreen-img {
+  width: 53.422px;
+  height: 20.997px;
+  display: block;
+}
+
+
+/* ── TAB BAR ──────────────────────────────────────────────── */
+/* Figma: h-68px, pad 12px 16px, gap 8px, border-bottom 1px
+   Total scrollable width: 531px (wider than 390 viewport)   */
+
+.tab-bar {
+  height: 68px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp2);
+  padding: var(--sp3) var(--sp4);
+  border-bottom: var(--ev-border) solid var(--ev-bg-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-bar::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px var(--sp3);
+  border-radius: var(--ev-radius-full);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.48px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: var(--ev-lime);
+  color: var(--ev-bg-app);
+}
+
+.tab.inactive {
+  background: var(--ev-lime-ghost);
+  border: var(--ev-border) solid var(--ev-lime-border);
+  color: var(--ev-lime-dim);
+}
+
+
+/* ── BOTTOM BAR ───────────────────────────────────────────── */
+/* Figma: h-58px, pad 16px 12px (sp4 sp3), border-top 1px   */
+
+.bottom-bar {
+  height: 58px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp2);
+  padding: var(--sp4) var(--sp3);
+  border-top: var(--ev-border) solid var(--ev-bar-border);
+  background:
+    linear-gradient(90deg, var(--ev-bar-bg) 0%, var(--ev-bar-bg) 100%),
+    linear-gradient(90deg, var(--ev-bg-app) 0%, var(--ev-bg-app) 100%);
+}
+
+
+/* ── DIETARY BADGES ───────────────────────────────────────── */
+
+.diet-badge {
+  display: flex;
+  align-items: center;
+  padding: var(--sp1) var(--sp2);
+  border-radius: var(--ev-radius-xs);
+  border: var(--ev-border) solid transparent;
+  opacity: 0.45;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.diet-badge span {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.48px;
+  white-space: nowrap;
+}
+
+.diet-badge.veg-badge {
+  background: var(--ev-veg-bg);
+  border-color: rgba(94, 255, 138, 0.3);
+}
+
+.diet-badge.veg-badge span { color: var(--ev-veg); }
+
+.diet-badge.nonveg-badge {
+  background: var(--ev-nonveg-bg);
+  border-color: rgba(255, 80, 80, 0.3);
+}
+
+.diet-badge.nonveg-badge span { color: var(--ev-nonveg); }
+
+.diet-badge.active {
+  opacity: 1;
+}
+
+.diet-badge.veg-badge.active    { border-color: var(--ev-veg); }
+.diet-badge.nonveg-badge.active { border-color: var(--ev-nonveg); }

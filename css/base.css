@@ -1,0 +1,45 @@
+/* ============================================================
+   base.css — Reset, global layout, shell
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  font-family: var(--font-sans);
+  color: var(--ev-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Mobile shell: 390×844 centred on any screen ── */
+.shell {
+  width: 390px;
+  height: 844px;
+  background: var(--ev-bg-app);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── iOS safe areas ── */
+.safe-top {
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.safe-bottom {
+  height: 34px;
+  flex-shrink: 0;
+  background:
+    linear-gradient(90deg, var(--ev-bar-bg) 0%, var(--ev-bar-bg) 100%),
+    linear-gradient(90deg, var(--ev-bg-app) 0%, var(--ev-bg-app) 100%);
+}

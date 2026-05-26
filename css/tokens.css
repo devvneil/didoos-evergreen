@@ -1,0 +1,45 @@
+/* ============================================================
+   tokens.css — Evergreen Design Tokens (from Figma)
+   All CSS custom properties live here.
+   ============================================================ */
+
+:root {
+  /* ── Surfaces ── */
+  --ev-bg-app:        #0d1a09;
+  --ev-bg-border:     #243318;
+  --ev-bar-bg:        rgba(0, 0, 0, 0.38);
+  --ev-bar-border:    rgba(200, 245, 106, 0.15);
+
+  /* ── Brand / Lime ── */
+  --ev-lime:          #c8f56a;
+  --ev-lime-ghost:    rgba(200, 245, 106, 0.10);
+  --ev-lime-border:   rgba(200, 245, 106, 0.25);
+  --ev-lime-dim:      rgba(200, 245, 106, 0.40);
+
+  /* ── Neutral ── */
+  --ev-white:         #ffffff;
+  --ev-white-dim:     rgba(255, 255, 255, 0.55);
+
+  /* ── Dietary ── */
+  --ev-veg:           #5eff8a;
+  --ev-veg-bg:        rgba(94, 255, 138, 0.10);
+  --ev-nonveg:        #ff5050;
+  --ev-nonveg-bg:     rgba(255, 80, 80, 0.10);
+
+  /* ── Spacing (ev-space-n) ── */
+  --sp1: 4px;
+  --sp2: 8px;
+  --sp3: 12px;
+  --sp4: 16px;
+
+  /* ── Border ── */
+  --ev-border:        1px;
+
+  /* ── Radius ── */
+  --ev-radius-full:   9999px;
+  --ev-radius-xs:     4px;
+
+  /* ── Typography ── */
+  --font-sans:        'DM Sans', sans-serif;
+  --font-serif:       'Cormorant Garamond', serif;
+}
