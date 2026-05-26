@@ -1,6 +1,138 @@
 /* ============================================================
-   pages/home.css — Landing / category selection page styles
-   (index.html — Figma node 296:8407)
+   pages/home.css — Landing page (Screen/Act 2)
+   Figma node: 296:8407
+   Scatter layout: 7 category circles in S-curve + large logo
    ============================================================ */
 
-/* Styles will be added once Figma design is confirmed */
+/* ── SCENE CONTAINER ──────────────────────────────────────── */
+/* Fills the space between safe-top and safe-bottom           */
+
+.home-scene {
+  position: relative;
+  flex: 1 0 0;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── CATEGORY NODE (circle + label) ──────────────────────── */
+
+.category-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Circle */
+.node-circle {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: rgba(200, 245, 106, 0.06);
+  border: 1.5px solid rgba(200, 245, 106, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.category-node:active .node-circle,
+.category-node:hover  .node-circle {
+  background: rgba(200, 245, 106, 0.14);
+  border-color: rgba(200, 245, 106, 0.5);
+}
+
+/* Icon inside circle */
+.node-circle svg {
+  width: 34px;
+  height: 34px;
+  stroke: var(--ev-lime);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Filled icon shapes (e.g. Star of David) */
+.node-circle svg .icon-fill {
+  fill: var(--ev-lime);
+  stroke: none;
+}
+
+/* Label below circle */
+.node-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ev-lime);
+  text-align: center;
+  letter-spacing: -0.24px;
+  white-space: nowrap;
+}
+
+/* ── ABSOLUTE POSITIONS ───────────────────────────────────── */
+/* Coordinates: top-left of the 82px circle                   */
+/* S-curve: top-right → bottom-right                          */
+
+.node--breakfast     { top:  58px; left: 248px; } /* top-right  */
+.node--starters      { top: 150px; left: 150px; } /* center     */
+.node--israeli       { top: 248px; left:  86px; } /* left       */
+.node--mains         { top: 350px; left:  55px; } /* far-left   */
+.node--bakes         { top: 456px; left:  80px; } /* left       */
+.node--drinks        { top: 546px; left: 150px; } /* center     */
+.node--desserts      { top: 636px; left: 248px; } /* right      */
+
+/* ── LARGE HOME LOGO ──────────────────────────────────────── */
+/* Positioned centre-right, same vertical band as Mains       */
+
+.home-logo {
+  position: absolute;
+  top: 358px;
+  left: 152px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* "Didoo's" — small, no indent */
+.home-logo-didoos {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ev-lime);
+  letter-spacing: 0.06em;
+  margin-bottom: -8px; /* pull Evergreen up */
+}
+
+/* "Evergreen" row — indented, with leaf */
+.home-logo-evergreen-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 14px;
+}
+
+.home-logo-evergreen-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1;
+  color: var(--ev-lime);
+  letter-spacing: 0.01em;
+}
+
+.home-logo-leaf {
+  width: 24px;
+  height: 24px;
+  fill: var(--ev-lime);
+  flex-shrink: 0;
+  margin-top: -14px; /* lift leaf to top-right of "Evergreen" */
+}
