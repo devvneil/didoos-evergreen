@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Didoo's Evergreen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Figma design tokens ── */
+    :root {
+      --ev-bg-app:       #0d1a09;
+      --ev-bg-border:    #243318;
+      --ev-bar-bg:       rgba(0,0,0,0.38);
+      --ev-bar-border:   rgba(200,245,106,0.15);
+      --ev-lime:         #c8f56a;
+      --ev-lime-ghost:   rgba(200,245,106,0.10);
+      --ev-lime-border:  rgba(200,245,106,0.25);
+      --ev-lime-dim:     rgba(200,245,106,0.40);
+      --ev-white:        #ffffff;
+      --ev-white-dim:    rgba(255,255,255,0.55);
+      --ev-veg:          #5eff8a;
+      --ev-veg-bg:       rgba(94,255,138,0.1);
+      --ev-nonveg:       #ff5050;
+      --ev-nonveg-bg:    rgba(255,80,80,0.1);
+      --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px;
+      --ev-border: 1px;
+      --ev-radius-full: 9999px;
+      --ev-radius-xs: 4px;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: #000;
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── 390×844 shell ── */
+    .shell {
+      width: 390px;
+      height: 844px;
+      background: var(--ev-bg-app);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Safe top 44px */
+    .safe-top { height: 44px; flex-shrink: 0; }
+
+    /* ── TOP BAR 56px ── */
+    .top-bar {
+      height: 56px; flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--sp3) var(--sp4);
+    }
+
+    .btn-back {
+      display: flex; align-items: center; gap: var(--sp1);
+      background: var(--ev-bar-bg);
+      border: var(--ev-border) solid var(--ev-lime);
+      border-radius: var(--ev-radius-full);
+      padding: var(--sp1) var(--sp3);
+      color: var(--ev-lime);
+      font-size: 12px; font-weight: 500; line-height: 18px;
+      letter-spacing: -0.48px;
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn-back svg {
+      width: 16px; height: 16px;
+      stroke: var(--ev-lime); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── ev-logo: 95×32, flex row center, pad 0 12px, overflow clip ── */
+    .ev-logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0 var(--sp3);
+      width: 95px;
+      height: 32px;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      overflow: hidden;
+    }
+    /* Inner column — "Didoo's Evergreen" */
+    .logo-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+    /* "Didoo's" image — 34.775×8.558px, no indent */
+    /* Figma: h-[8.558px] mb-[-6px]  — negative margin pulls Evergreen up */
+    .logo-didoos-img {
+      width: 34.775px;
+      height: 8.558px;
+      display: block;
+      flex-shrink: 0;
+      margin-bottom: -6px;
+    }
+    /* "Evergreen" vector wrapper — padding-left: 12px, full width */
+    .logo-evergreen-wrap {
+      padding-left: 12px;
+      width: 100%;
+    }
+    /* Evergreen vector image — 53.422×20.997px */
+    .logo-evergreen-img {
+      width: 53.422px;
+      height: 20.997px;
+      display: block;
+    }
+
+    /* ── TAB BAR 68px ── */
+    .tab-bar {
+      height: 68px; flex-shrink: 0;
+      display: flex; align-items: center;
+      gap: var(--sp2);
+      padding: var(--sp3) var(--sp4);
+      border-bottom: var(--ev-border) solid var(--ev-bg-border);
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab {
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 13px var(--sp3);
+      border-radius: var(--ev-radius-full);
+      font-size: 12px; font-weight: 500; line-height: 18px;
+      letter-spacing: -0.48px; white-space: nowrap;
+      cursor: pointer; border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .tab.active { background: var(--ev-lime); color: var(--ev-bg-app); }
+    .tab.inactive {
+      background: var(--ev-lime-ghost);
+      border: var(--ev-border) solid var(--ev-lime-border);
+      color: var(--ev-lime-dim);
+    }
+
+    /* ── SCROLL AREA flex:1 ── */
+    .scroll-area {
+      flex: 1 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow-y: auto; overflow-x: hidden;
+      padding: var(--sp3) var(--sp4) 0;
+      min-height: 0;
+      scrollbar-width: none;
+    }
+    .scroll-area::-webkit-scrollbar { display: none; }
+
+    /* Section subheading */
+    .subheading {
+      display: flex; align-items: center;
+      gap: var(--sp2);
+      padding: var(--sp2) var(--sp4);
+      flex-shrink: 0;
+    }
+    .subheading-text {
+      font-size: 12px; font-weight: 500; line-height: 18px;
+      letter-spacing: -0.48px;
+      color: var(--ev-lime-dim);
+    }
+    .subheading-line {
+      width: 16px; height: 1px;
+      background: #d9d9d9;
+    }
+
+    /* ── Menu item ── */
+    .menu-item {
+      display: flex; align-items: flex-start;
+      gap: var(--sp2);
+      padding: var(--sp3) var(--sp4);
+      border-bottom: var(--ev-border) solid var(--ev-bg-border);
+      width: 100%; flex-shrink: 0;
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .menu-item:active { background: rgba(200,245,106,0.04); }
+    .menu-item.selected { background: rgba(200,245,106,0.06); }
+
+    /* Left col */
+    .item-left {
+      display: flex;
+      flex: 1 0 0; min-width: 0;
+      gap: var(--sp2);
+      align-items: flex-start;
+    }
+    .dot-wrap {
+      width: 8px; height: 21px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%; flex-shrink: 0;
+    }
+    .dot.veg    { background: var(--ev-veg); }
+    .dot.nonveg { background: var(--ev-nonveg); }
+    .item-name {
+      font-size: 16px; font-weight: 500; line-height: 20.8px;
+      letter-spacing: -0.64px;
+      color: var(--ev-white);
+    }
+
+    /* Right col */
+    .item-right {
+      display: flex; align-items: center;
+      gap: var(--sp2); flex-shrink: 0;
+    }
+    .item-price {
+      font-size: 14px; font-weight: 400; line-height: 21px;
+      letter-spacing: -0.56px;
+      color: var(--ev-white-dim);
+      white-space: nowrap;
+    }
+
+    /* Non-veg add stepper: — | 1 */
+    .add-ctrl {
+      display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+    }
+    .add-minus {
+      font-size: 14px; font-weight: 400;
+      color: var(--ev-white-dim);
+      letter-spacing: -0.56px;
+    }
+    .add-sep {
+      width: 1px; height: 14px;
+      background: var(--ev-white-dim);
+    }
+    .add-count {
+      font-size: 14px; font-weight: 400;
+      color: var(--ev-white);
+      letter-spacing: -0.56px;
+      min-width: 8px; text-align: center;
+    }
+
+    /* ── BOTTOM BAR 58px ── */
+    .bottom-bar {
+      height: 58px; flex-shrink: 0;
+      display: flex; align-items: center;
+      gap: var(--sp2);
+      padding: var(--sp4) var(--sp3);
+      border-top: var(--ev-border) solid var(--ev-bar-border);
+      background:
+        linear-gradient(90deg, var(--ev-bar-bg) 0%, var(--ev-bar-bg) 100%),
+        linear-gradient(90deg, var(--ev-bg-app) 0%, var(--ev-bg-app) 100%);
+    }
+
+    /* Dietary badges */
+    .diet-badge {
+      display: flex; align-items: center;
+      padding: var(--sp1) var(--sp2);
+      border-radius: var(--ev-radius-xs);
+      border: var(--ev-border) solid transparent;
+      transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+      opacity: 0.45;
+    }
+    .diet-badge span {
+      font-size: 12px; font-weight: 500; line-height: 18px;
+      letter-spacing: -0.48px;
+      white-space: nowrap;
+    }
+    /* Veg badge */
+    .diet-badge.veg-badge {
+      background: var(--ev-veg-bg);
+      border-color: rgba(94,255,138,0.3);
+    }
+    .diet-badge.veg-badge span { color: var(--ev-veg); }
+    /* Non-veg badge */
+    .diet-badge.nonveg-badge {
+      background: var(--ev-nonveg-bg);
+      border-color: rgba(255,80,80,0.3);
+    }
+    .diet-badge.nonveg-badge span { color: var(--ev-nonveg); }
+
+    /* Active state */
+    .diet-badge.active {
+      opacity: 1;
+      box-shadow: 0 0 0 1px currentColor;
+    }
+    .diet-badge.veg-badge.active    { border-color: var(--ev-veg); }
+    .diet-badge.nonveg-badge.active { border-color: var(--ev-nonveg); }
+
+    /* Safe bottom 34px */
+    .safe-bottom {
+      height: 34px; flex-shrink: 0;
+      background:
+        linear-gradient(90deg, var(--ev-bar-bg) 0%, var(--ev-bar-bg) 100%),
+        linear-gradient(90deg, var(--ev-bg-app) 0%, var(--ev-bg-app) 100%);
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="safe-top"></div>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <button class="btn-back">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </button>
+
+    <!-- ev-logo: 95×32, flex row center, pad 0 12px, overflow clip -->
+    <div class="ev-logo">
+      <div class="logo-stack">
+        <!-- "Didoo's" — Figma asset 34.775×8.558px, no indent -->
+        <img
+          class="logo-didoos-img"
+          src="https://www.figma.com/api/mcp/asset/09dd085e-7286-4a66-a9c4-5b9d3f111dd4"
+          alt="Didoo's"
+        />
+        <!-- "Evergreen" vector — Figma asset 53.422×20.997px, indent 12px -->
+        <div class="logo-evergreen-wrap">
+          <img
+            class="logo-evergreen-img"
+            src="https://www.figma.com/api/mcp/asset/d097ef31-20e3-42d2-abf9-46b8db3db95a"
+            alt="Evergreen"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TAB BAR -->
+  <nav class="tab-bar">
+    <button class="tab active">Indian</button>
+    <button class="tab inactive">Chinese</button>
+    <button class="tab inactive">BBQ</button>
+    <button class="tab inactive">Intercontinental</button>
+    <button class="tab inactive">Italian</button>
+    <button class="tab inactive">Breads</button>
+    <button class="tab inactive">Thalis</button>
+  </nav>
+
+  <!-- SCROLL AREA -->
+  <main class="scroll-area">
+
+    <div class="subheading">
+      <span class="subheading-text">INDIAN</span>
+      <div class="subheading-line"></div>
+    </div>
+
+    <!-- VEG items -->
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Dal Makhani</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 250</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Yellow Dal Fry</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 230</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Shahi Paneer</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 370</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Kadhai Paneer</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 380</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Paneer Butter Masala</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 370</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Channa Masala</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 260</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Veg Mix Masala</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 260</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Veg Korma</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 370</span></div>
+    </div>
+
+    <!-- NON-VEG items -->
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Chicken Curry</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 480</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Kadhai Chicken</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 490</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Butter Chicken</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 470</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Lamb Curry</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 550</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Lamb Curry Masala</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 570</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Chicken Curry Masala</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 520</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="nonveg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot nonveg"></span></div>
+        <span class="item-name">Egg Curry</span>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹ 350</span>
+        <div class="add-ctrl">
+          <span class="add-minus">—</span>
+          <div class="add-sep"></div>
+          <span class="add-count">1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Jeera Rice</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 170</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Plain Rice</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 110</span></div>
+    </div>
+
+    <div class="menu-item" data-type="veg">
+      <div class="item-left">
+        <div class="dot-wrap"><span class="dot veg"></span></div>
+        <span class="item-name">Veg Raita</span>
+      </div>
+      <div class="item-right"><span class="item-price">₹ 120</span></div>
+    </div>
+
+  </main>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <div class="diet-badge veg-badge active" id="badgeVeg">
+      <span>Veg</span>
+    </div>
+    <div class="diet-badge nonveg-badge" id="badgeNonVeg">
+      <span>Non-Veg</span>
+    </div>
+  </div>
+
+  <div class="safe-bottom"></div>
+</div>
+
+<script>
+  const items     = document.querySelectorAll('.menu-item');
+  const badgeVeg  = document.getElementById('badgeVeg');
+  const badgeNV   = document.getElementById('badgeNonVeg');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      // Deselect all rows
+      items.forEach(i => i.classList.remove('selected'));
+      item.classList.add('selected');
+
+      const type = item.dataset.type;
+
+      if (type === 'veg') {
+        badgeVeg.classList.add('active');
+        badgeNV.classList.remove('active');
+      } else {
+        badgeNV.classList.add('active');
+        badgeVeg.classList.remove('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
