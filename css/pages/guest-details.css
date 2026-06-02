@@ -237,6 +237,24 @@
 }
 
 
+/* Email error message */
+.email-error {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  color: #ff5050;
+  margin-top: 2px;
+}
+
+/* Red border on invalid email */
+.input-error {
+  border-color: #ff5050 !important;
+}
+
+
 /* Italic note */
 .details-note {
   width: 342px;
