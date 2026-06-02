@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>WiFi Connect — Didoo's Evergreen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/wifi.css" />
+</head>
+<body>
+<div class="shell">
+
+  <div class="safe-top"></div>
+
+  <!-- MENU COMPONENT HEADER -->
+  <header class="menu-component">
+    <img class="menu-logo" src="../assets/Welcome Logo.svg" alt="Didoo's Evergreen" />
+  </header>
+
+  <!-- MAIN CONTENT SECTION — 390×545, gap 24, padding 12px 24px -->
+  <main class="guideline-content" aria-label="WiFi Connect">
+
+    <!-- Section title -->
+    <h2 class="wifi-title">Connect to wifi</h2>
+
+    <!-- Credentials card — 342×76, bg #162010, border #2D4220 -->
+    <div class="wifi-card">
+
+      <!-- Network row — 310×18, space-between -->
+      <div class="wifi-row">
+        <span class="wifi-label">Network:</span>
+        <span class="wifi-value">evergreen_wifi</span>
+      </div>
+
+      <!-- Password row — 310×18, space-between -->
+      <div class="wifi-row">
+        <span class="wifi-label">Password:</span>
+        <span class="wifi-value">xxyz@ttw</span>
+      </div>
+
+    </div>
+
+    <!-- Instructions set -->
+    <div class="wifi-instructions">
+      <span class="wifi-instructions-header">How to connect</span>
+      <span class="wifi-step">1.  Open your phone Settings</span>
+      <span class="wifi-step">2.  Tap WiFi</span>
+      <span class="wifi-step">3.  Select "evergreen wifi"</span>
+      <span class="wifi-step">4.  Enter the password</span>
+      <span class="wifi-step">5.  Return here and tap I'm Connected</span>
+      <span class="wifi-note">Tapping "I'm Connected" will begin your Didoo's Evergreen Café experience.</span>
+    </div>
+
+  </main>
+
+  <!-- BTN CONTENT — 390×77, padding 16px -->
+  <div class="btn-content">
+    <button class="btn-connected" onclick="navigateTo('guest-details.html')">I'm Connected</button>
+  </div>
+
+  <div class="safe-bottom"></div>
+
+</div>
+
+<script src="../js/navigation.js"></script>
+<script>
+  function navigateTo(page) {
+    document.querySelector('.shell').style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
+    document.querySelector('.shell').style.transform = 'translateX(-100%)';
+    document.querySelector('.shell').style.opacity = '0';
+    setTimeout(function () {
+      window.location.href = page;
+    }, 300);
+  }
+</script>
+<script>
+  /* Copy-to-clipboard for WiFi credentials */
+  document.querySelectorAll('.wifi-copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.dataset.copy;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+      var label = btn.querySelector('span');
+      var original = label.textContent;
+      label.textContent = 'Copied!';
+      setTimeout(function () { label.textContent = original; }, 1500);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+/* ============================================================
+   pages/flow.css — Shared styles for all info/flow screens
+   wifi-connect · house-guidelines · guest-details ·
+   returning-customer · order-confirm · ar-placeholder
+   ============================================================ */
+
+
+/* ── SCENE (fills space between safe areas) ───────────────── */
+
+.flow-scene {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding: 0 24px;
+}
+
+.flow-scene::-webkit-scrollbar { display: none; }
+
+
+/* ── LARGE CENTERED LOGO ──────────────────────────────────── */
+/* Figma: Evergreen logo centered, top area of flow screens   */
+
+.flow-logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 48px;
+  flex-shrink: 0;
+}
+
+.flow-logo img {
+  width: 168px;
+  height: 64px;
+  display: block;
+}
+
+
+/* ── COMPACT TOP LOGO (order-confirm style) ───────────────── */
+
+.flow-logo-sm {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 0;
+  flex-shrink: 0;
+}
+
+.flow-logo-sm img {
+  width: 95px;
+  height: 36px;
+  display: block;
+}
+
+
+/* ── FLOW BODY ────────────────────────────────────────────── */
+
+.flow-body {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+
+/* ── CTA FOOTER (sticky bottom) ──────────────────────────── */
+
+.flow-footer {
+  flex-shrink: 0;
+  padding: 16px 0 12px;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  background: var(--ev-lime);
+  border: none;
+  border-radius: var(--ev-radius-full);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.64px;
+  color: var(--ev-bg-app);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
+}
+
+.cta-btn:active { opacity: 0.8; }
+
+
+/* ── FLOW HEADING ─────────────────────────────────────────── */
+
+.flow-heading {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.96px;
+  color: var(--ev-lime);
+  margin-bottom: 12px;
+}
+
+.flow-heading-lg {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.28px;
+  color: var(--ev-lime);
+  margin-bottom: 8px;
+}
+
+.flow-subtext {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  color: var(--ev-white-dim);
+  margin-bottom: 0;
+}
+
+
+/* ── WIFI SCREEN ──────────────────────────────────────────── */
+
+.wifi-card {
+  border: 1px solid var(--ev-bg-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 28px;
+}
+
+.wifi-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.wifi-label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ev-white-dim);
+  letter-spacing: -0.28px;
+}
+
+.wifi-value {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ev-white);
+  letter-spacing: -0.28px;
+}
+
+.wifi-steps-heading {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+  color: var(--ev-white);
+  margin-bottom: 16px;
+}
+
+.wifi-step {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.wifi-step-num {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ev-white-dim);
+  letter-spacing: -0.28px;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.wifi-step-text {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ev-white);
+  letter-spacing: -0.28px;
+  line-height: 1.4;
+}
+
+
+/* ── GUIDELINES SCREEN ────────────────────────────────────── */
+
+.guidelines-intro {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.28px;
+  color: var(--ev-white-dim);
+  margin-bottom: 28px;
+}
+
+.guideline-rule {
+  margin-bottom: 24px;
+}
+
+.rule-heading {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--ev-white);
+  margin-bottom: 8px;
+}
+
+.rule-body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.28px;
+  color: var(--ev-white-dim);
+}
+
+
+/* ── GUEST DETAILS SCREEN ─────────────────────────────────── */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.26px;
+  color: var(--ev-white-dim);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ev-bg-border);
+  border-radius: 8px;
+  padding: 0 14px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ev-white);
+  letter-spacing: -0.3px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.form-input:focus {
+  border-color: var(--ev-lime-dim);
+}
+
+/* Mobile row with country code + number */
+.mobile-row {
+  display: flex;
+  gap: 8px;
+}
+
+.country-select-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.country-select {
+  height: 52px;
+  padding: 0 10px 0 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ev-bg-border);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ev-white);
+  letter-spacing: -0.3px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 28px;
+}
+
+.country-caret {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.mobile-input {
+  flex: 1 0 0;
+}
+
+.privacy-note {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 8px;
+}
+
+
+/* ── RETURNING CUSTOMER SCREEN ────────────────────────────── */
+
+.returning-spacer {
+  flex: 1 0 0;
+  min-height: 80px;
+}
+
+.secondary-link {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.26px;
+  color: var(--ev-white-dim);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.secondary-link:active { opacity: 0.6; }
+
+
+/* ── ORDER CONFIRM SCREEN ─────────────────────────────────── */
+
+.confirm-center {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.confirm-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--ev-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--ev-bg-app);
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.confirm-title {
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1.28px;
+  color: var(--ev-lime);
+  text-align: center;
+}
+
+.confirm-sub {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  color: var(--ev-white-dim);
+  text-align: center;
+  margin-top: -12px;
+}
+
+
+/* ── AR PLACEHOLDER SCREEN ────────────────────────────────── */
+
+.ar-wip {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ar-wip-text {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.36px;
+  color: #E8472A;
+  text-align: center;
+  line-height: 1.4;
+}
+
+
+/* ── DISCLAIMER (italic small) ────────────────────────────── */
+
+.flow-disclaimer {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 20px;
+}

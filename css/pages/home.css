@@ -46,21 +46,11 @@
   border-color: rgba(200, 245, 106, 0.5);
 }
 
-/* Icon inside circle */
+/* Icon inside circle — each SVG carries its own fill/stroke via currentColor */
 .node-circle svg {
   width: 34px;
   height: 34px;
-  stroke: var(--ev-lime);
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* Filled icon shapes (e.g. Star of David) */
-.node-circle svg .icon-fill {
-  fill: var(--ev-lime);
-  stroke: none;
+  color: var(--ev-lime);
 }
 
 /* Label below circle */

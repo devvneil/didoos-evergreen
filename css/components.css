@@ -150,61 +150,78 @@
 
 
 /* ── BOTTOM BAR ───────────────────────────────────────────── */
-/* Figma: h-58px, pad 16px 12px (sp4 sp3), border-top 1px   */
+/* Figma: h-66px, pad 16px 12px, justify-content: space-between */
 
 .bottom-bar {
-  height: 58px;
+  height: 66px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: var(--sp2);
+  justify-content: space-between;
   padding: var(--sp4) var(--sp3);
   border-top: var(--ev-border) solid var(--ev-bar-border);
-  background:
-    linear-gradient(90deg, var(--ev-bar-bg) 0%, var(--ev-bar-bg) 100%),
-    linear-gradient(90deg, var(--ev-bg-app) 0%, var(--ev-bg-app) 100%);
+  background: var(--ev-bg-app);
 }
 
 
-/* ── DIETARY BADGES ───────────────────────────────────────── */
+/* ── DIETARY INDICATOR (single badge, toggles veg/nonveg) ── */
 
-.diet-badge {
+.diet-indicator {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: var(--sp1) var(--sp2);
+  width: 64px;
+  height: 34px;
+  background: rgba(94, 255, 138, 0.10);
+  border: var(--ev-border) solid #5EFF8A;
   border-radius: var(--ev-radius-xs);
-  border: var(--ev-border) solid transparent;
-  opacity: 0.45;
-  transition: background 0.2s, border-color 0.2s, opacity 0.2s, box-shadow 0.2s;
-  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.diet-badge span {
+.diet-indicator span {
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.48px;
-  white-space: nowrap;
+  color: #5EFF8A;
+  transition: color 0.2s;
 }
 
-.diet-badge.veg-badge {
-  background: var(--ev-veg-bg);
-  border-color: rgba(94, 255, 138, 0.3);
+.diet-indicator.nonveg {
+  background: rgba(232, 71, 42, 0.10);
+  border-color: #E8472A;
 }
 
-.diet-badge.veg-badge span { color: var(--ev-veg); }
+.diet-indicator.nonveg span { color: #E8472A; }
 
-.diet-badge.nonveg-badge {
-  background: var(--ev-nonveg-bg);
-  border-color: rgba(255, 80, 80, 0.3);
+
+/* ── CHECKOUT COUNTER PILL ────────────────────────────────── */
+
+.checkout-counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp2);
+  padding: var(--sp2) var(--sp3);
+  width: 149px;
+  height: 34px;
+  background: var(--ev-bar-bg);
+  border: var(--ev-border) solid var(--ev-lime);
+  border-radius: var(--ev-radius-full);
+  cursor: pointer;
+  transition: opacity 0.15s;
 }
 
-.diet-badge.nonveg-badge span { color: var(--ev-nonveg); }
+.checkout-counter:active { opacity: 0.75; }
 
-.diet-badge.active {
-  opacity: 1;
+.checkout-text,
+.checkout-count {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.48px;
+  color: var(--ev-white);
 }
-
-.diet-badge.veg-badge.active    { border-color: var(--ev-veg); }
-.diet-badge.nonveg-badge.active { border-color: var(--ev-nonveg); }

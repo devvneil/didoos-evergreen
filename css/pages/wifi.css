@@ -1,0 +1,221 @@
+/* ============================================================
+   pages/wifi.css — WiFi Connect page
+   ============================================================ */
+
+
+/* Override shell background so no gaps show between sections */
+.shell {
+  background: #0F1A0A;
+}
+
+
+/* ── SECTION 1 : MENU COMPONENT HEADER ───────────────────────
+   Figma: width 390 · height 144 · opacity 0.92
+   padding: ev-space-4(16px) 110px ev-space-16(64px) 110px
+   ─────────────────────────────────────────────────────────── */
+
+.menu-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sp4) 110px var(--sp16);   /* 16 110 64 110 */
+  width: 390px;
+  height: 144px;
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Figma: 161.57 × 58.71, top 3px, left 3px */
+.menu-logo {
+  width: 161.57px;
+  height: 58.71px;
+  flex: none;
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+
+
+/* ── SECTION 2 : WIFI CONTENT ─────────────────────────────────
+   Figma: width 390 · height 545 · opacity 1
+   gap 24 · padding: ev-space-3(12px) ev-space-6(24px)
+   ─────────────────────────────────────────────────────────── */
+
+.guideline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--sp3) var(--sp6);          /* 12px 24px */
+  gap: 24px;
+  width: 390px;
+  height: 545px;
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.guideline-content::-webkit-scrollbar { display: none; }
+
+
+/* ── SECTION 3 : BTN CONTENT ──────────────────────────────────
+   Figma: width 390 · height 77 · padding ev-space-4(16px)
+   ─────────────────────────────────────────────────────────── */
+
+.btn-content {
+  width: 390px;
+  height: 77px;
+  padding: var(--sp4);                     /* 16px */
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── I'm Connected button ─────────────────────────────────────
+   Figma: width 358 · height 45 · padding-top/bottom ev-space-3
+   bg #C8F56A · border-radius ev-radius-md(8px)
+   ─────────────────────────────────────────────────────────── */
+
+.btn-connected {
+  width: 358px;
+  height: 45px;
+  padding: var(--sp3) 0;                   /* 12px top/bottom */
+  background: var(--ev-lime);              /* #C8F56A */
+  border: none;
+  border-radius: var(--ev-radius-md);      /* 8px */
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #0F1A0A;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: opacity 0.2s;
+}
+
+.btn-connected:active { opacity: 0.85; }
+
+
+/* ── "Connect to wifi" title ──────────────────────────────────
+   Figma: width 131 · height 24 · color ev-lime #C8F56A
+   ─────────────────────────────────────────────────────────── */
+
+.wifi-title {
+  width: 131px;
+  height: 24px;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: var(--ev-lime);                   /* #C8F56A */
+  margin: 0;
+  flex-shrink: 0;
+  font-style: normal;
+}
+
+
+/* ── CREDENTIALS CARD ─────────────────────────────────────────
+   Figma: width 342 · height 76 · gap 8
+   padding ev-space-4(16px) · border-radius ev-radius-md(8px)
+   bg #162010 · border 1px solid #2D4220
+   ─────────────────────────────────────────────────────────── */
+
+.wifi-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp2);                         /* 8px */
+  padding: var(--sp4);                     /* 16px */
+  width: 342px;
+  height: 76px;
+  background: var(--ev-bg-card);           /* #162010 */
+  border: 1px solid var(--ev-bg-card-border); /* #2D4220 */
+  border-radius: var(--ev-radius-md);      /* 8px */
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* ── CREDENTIAL ROWS ──────────────────────────────────────────
+   Figma: width 310 · height 18 · justify-content space-between
+   ─────────────────────────────────────────────────────────── */
+
+.wifi-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 310px;
+  height: 18px;
+}
+
+/* Label — "Network:" / "Password:" · dim white #FFFFFFA6 */
+.wifi-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.65);        /* #FFFFFFA6 */
+}
+
+/* ── INSTRUCTIONS ─────────────────────────────────────────────
+   Container inherits gap 24px from .guideline-content
+   ─────────────────────────────────────────────────────────── */
+
+.wifi-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp6);                         /* 24px between items */
+}
+
+/* "How to connect" — 500 Medium, 12px, full white */
+.wifi-instructions-header {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  width: 84px;
+  height: 18px;
+  margin-bottom: var(--sp1);               /* 4px extra gap before steps */
+}
+
+/* Step lines — 400 Regular, 12px */
+.wifi-step {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.65);        /* #FFFFFFA6 */
+}
+
+/* Italic note below step 5 — 342×14, 400 Italic, 10px */
+.wifi-note {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.65);        /* #FFFFFFA6 */
+  width: 342px;
+}
+
+
+/* Value — "evergreen_wifi" / "xxyz@ttw" · same type, same color */
+.wifi-value {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.65);        /* #FFFFFFA6 */
+}

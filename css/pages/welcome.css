@@ -1,0 +1,77 @@
+/* ============================================================
+   pages/welcome.css — Welcome / Splash screen
+   Figma node: Screen/Welcome
+   ============================================================ */
+
+/* ── FULL SCENE ───────────────────────────────────────────── */
+
+.welcome-scene {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix safe-bottom colour — must match page bg, no overlay    */
+.safe-bottom {
+  background: var(--ev-bg-app) !important;
+}
+
+
+/* ── CENTRED CONTENT BLOCK ────────────────────────────────── */
+/* Figma: menu_component — gap 16px, opacity 0.92             */
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 48px;
+  opacity: 0.92;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ── LOGO — 168×64px, vector absolutely centred inside ───── */
+/* Figma: Vector 161.57×58.71px                               */
+
+.welcome-logo {
+  position: relative;
+  width: 168px;
+  height: 64px;
+  flex: none;
+}
+
+.welcome-logo-vector {
+  position: absolute;
+  width: 161.57px;
+  height: 58.71px;
+  left: calc(50% - 161.57px / 2 - 0.21px);
+  top:  calc(50% - 58.71px  / 2 + 0.36px);
+  display: block;
+}
+
+
+/* ── TAGLINE ──────────────────────────────────────────────── */
+/* Figma: DM Sans 20px / 400 / -0.04em / rgba(255,255,255,0.65) */
+
+.welcome-tagline {
+  width: 233px;
+  height: 24px;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  margin: 0;
+  flex: none;
+  flex-grow: 0;
+}

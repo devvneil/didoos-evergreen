@@ -1,0 +1,267 @@
+/* ============================================================
+   pages/detail.css — Item detail view
+   ============================================================ */
+
+
+/* ── PHOTO SECTION ────────────────────────────────────────── */
+/* Overlapping layout: top-bar is absolute on top of photo    */
+
+.detail-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 280px;
+  background: #f5f0e8;
+  overflow: hidden;
+}
+
+.detail-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Photo placeholder when no real image exists */
+.detail-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #f5ede0 0%, #e8d5b0 100%);
+}
+
+.detail-photo-placeholder svg {
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
+  color: #8b6914;
+}
+
+/* Top bar overlaid on photo */
+.detail-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp3) var(--sp4);
+  z-index: 10;
+}
+
+/* Logo on photo needs slightly different treatment */
+.detail-logo {
+  display: flex;
+  align-items: center;
+}
+
+.detail-logo img {
+  width: 80px;
+  height: 30px;
+  display: block;
+}
+
+
+/* ── DARK CONTENT SECTION ─────────────────────────────────── */
+
+.detail-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding: 20px 16px 0;
+  min-height: 0;
+}
+
+.detail-content::-webkit-scrollbar { display: none; }
+
+
+/* ── DIETARY BADGE ────────────────────────────────────────── */
+
+.detail-diet-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: var(--ev-radius-full);
+  border: 1px solid #5EFF8A;
+  background: rgba(94, 255, 138, 0.10);
+  margin-bottom: 12px;
+}
+
+.detail-diet-badge.nonveg {
+  border-color: #E8472A;
+  background: rgba(232, 71, 42, 0.10);
+}
+
+.detail-diet-badge span {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.48px;
+  color: #5EFF8A;
+}
+
+.detail-diet-badge.nonveg span { color: #E8472A; }
+
+
+/* ── ITEM NAME & DESCRIPTION ──────────────────────────────── */
+
+.detail-name {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.96px;
+  line-height: 1.2;
+  color: var(--ev-white);
+  margin-bottom: 8px;
+}
+
+.detail-desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.26px;
+  color: var(--ev-white-dim);
+  margin-bottom: 16px;
+}
+
+.detail-price {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1.12px;
+  color: var(--ev-white);
+  margin-bottom: 24px;
+}
+
+
+/* ── OPTION SECTION ───────────────────────────────────────── */
+
+.detail-section {
+  margin-bottom: 20px;
+}
+
+.detail-section-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+  color: var(--ev-white-dim);
+  margin-bottom: 10px;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: var(--ev-radius-full);
+  border: 1px solid var(--ev-bg-border);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.24px;
+  color: var(--ev-white-dim);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pill.active {
+  background: var(--ev-lime-ghost);
+  border-color: var(--ev-lime-border);
+  color: var(--ev-lime);
+  font-weight: 500;
+}
+
+.pill:active { opacity: 0.7; }
+
+
+/* ── BOTTOM ACTION BAR ────────────────────────────────────── */
+
+.detail-action-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px 16px;
+  gap: 16px;
+  border-top: 1px solid var(--ev-bg-border);
+  background: var(--ev-bg-app);
+}
+
+/* "Add to Order" button — takes remaining width */
+.add-to-order-btn {
+  flex: 1 0 0;
+  height: 48px;
+  background: var(--ev-lime);
+  border: none;
+  border-radius: var(--ev-radius-full);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.64px;
+  color: var(--ev-bg-app);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
+}
+
+.add-to-order-btn:active { opacity: 0.8; }
+
+/* Quantity stepper */
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--ev-lime-border);
+  border-radius: 50%;
+  color: var(--ev-white);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
+}
+
+.qty-btn:active { opacity: 0.6; }
+
+.qty-count {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.64px;
+  color: var(--ev-white);
+  min-width: 20px;
+  text-align: center;
+}

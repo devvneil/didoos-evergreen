@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Didoo's Evergreen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/welcome.css" />
+</head>
+<body>
+<div class="shell">
+
+  <div class="safe-top"></div>
+
+  <main class="welcome-scene" role="button" tabindex="0" aria-label="Tap to enter Didoo's Evergreen">
+    <div class="welcome-content">
+
+      <div class="welcome-logo">
+        <img
+          class="welcome-logo-vector"
+          src="assets/Welcome Logo.svg"
+          alt="Didoo's Evergreen"
+          draggable="false"
+        />
+      </div>
+
+      <p class="welcome-tagline">Come hungry. Leave happy.</p>
+
+    </div>
+  </main>
+
+  <div class="safe-bottom"></div>
+
+</div>
+<script>
+  var scene = document.querySelector('.welcome-scene');
+  scene.addEventListener('click', function () { window.location.href = 'index.html'; });
+  scene.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') window.location.href = 'index.html';
+  });
+</script>
+</body>
+</html>

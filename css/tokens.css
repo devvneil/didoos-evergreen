@@ -27,10 +27,12 @@
   --ev-nonveg-bg:     rgba(255, 80, 80, 0.10);
 
   /* ── Spacing (ev-space-n) ── */
-  --sp1: 4px;
-  --sp2: 8px;
-  --sp3: 12px;
-  --sp4: 16px;
+  --sp1:  4px;
+  --sp2:  8px;
+  --sp3:  12px;
+  --sp4:  16px;
+  --sp6:  24px;
+  --sp16: 64px;
 
   /* ── Border ── */
   --ev-border:        1px;
@@ -38,6 +40,11 @@
   /* ── Radius ── */
   --ev-radius-full:   9999px;
   --ev-radius-xs:     4px;
+  --ev-radius-md:     8px;
+
+  /* ── Card Surfaces ── */
+  --ev-bg-card:       #162010;
+  --ev-bg-card-border:#2D4220;
 
   /* ── Typography ── */
   --font-sans:        'DM Sans', sans-serif;
