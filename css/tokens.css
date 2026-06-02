@@ -40,6 +40,7 @@
   /* ── Radius ── */
   --ev-radius-full:   9999px;
   --ev-radius-xs:     4px;
+  --ev-radius-sm:     6px;
   --ev-radius-md:     8px;
 
   /* ── Card Surfaces ── */

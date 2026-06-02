@@ -37,10 +37,18 @@
 
 </div>
 <script>
+  function navigateTo(page) {
+    var shell = document.querySelector('.shell');
+    shell.style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
+    shell.style.transform = 'translateX(-100%)';
+    shell.style.opacity = '0';
+    setTimeout(function () { window.location.href = page; }, 300);
+  }
+
   var scene = document.querySelector('.welcome-scene');
-  scene.addEventListener('click', function () { window.location.href = 'index.html'; });
+  scene.addEventListener('click', function () { navigateTo('pages/wifi-connect.html'); });
   scene.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') window.location.href = 'index.html';
+    if (e.key === 'Enter' || e.key === ' ') navigateTo('pages/wifi-connect.html');
   });
 </script>
 </body>
