@@ -1,0 +1,98 @@
+/* ============================================================
+   pages/guest-details.css — Guest Details page
+   ============================================================ */
+
+.shell { background: #0F1A0A; }
+
+/* ── SECTION 1 : MENU COMPONENT HEADER — 390×144 ───────────── */
+
+.menu-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sp4) 110px var(--sp16);
+  width: 390px;
+  height: 144px;
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.menu-logo {
+  width: 161.57px;
+  height: 58.71px;
+  flex: none;
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+
+
+/* ── SECTION 2 : GUIDELINE CONTENT — 390×545 ───────────────── */
+
+.guideline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--sp3) var(--sp6);
+  gap: 16px;
+  width: 390px;
+  height: 545px;
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.guideline-content::-webkit-scrollbar { display: none; }
+
+
+/* ── PAGE TITLE — "A little about you" · 145×24 ────────────── */
+
+.page-title {
+  width: 145px;
+  height: 24px;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: var(--ev-lime);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+
+/* ── SECTION 3 : BTN CONTENT — 390×77 ──────────────────────── */
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 390px;
+  height: 77px;
+  padding: var(--sp4);
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  width: 358px;
+  height: 45px;
+  padding: var(--sp3) 0;
+  background: var(--ev-lime);
+  border: none;
+  border-radius: var(--ev-radius-md);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #0F1A0A;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:active { opacity: 0.85; }

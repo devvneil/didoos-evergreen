@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Guest Details — Didoo's Evergreen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages/guest-details.css" />
+</head>
+<body>
+<div class="shell">
+
+  <div class="safe-top"></div>
+
+  <!-- MENU COMPONENT HEADER — 390×144 -->
+  <header class="menu-component">
+    <img class="menu-logo" src="../assets/Welcome Logo.svg" alt="Didoo's Evergreen" />
+  </header>
+
+  <!-- GUIDELINE CONTENT — 390×545 -->
+  <main class="guideline-content" aria-label="Guest Details">
+    <h2 class="page-title">A little about you</h2>
+    <!-- content coming soon -->
+  </main>
+
+  <!-- BTN CONTENT — 390×77 -->
+  <div class="btn-content">
+    <button class="btn-primary" onclick="navigateTo('')">Submit</button>
+  </div>
+
+  <div class="safe-bottom"></div>
+
+</div>
+<script src="../js/navigation.js"></script>
+<script>
+  function navigateTo(page) {
+    document.querySelector('.shell').style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
+    document.querySelector('.shell').style.transform = 'translateX(-100%)';
+    document.querySelector('.shell').style.opacity = '0';
+    setTimeout(function () { window.location.href = page; }, 300);
+  }
+</script>
+</body>
+</html>
