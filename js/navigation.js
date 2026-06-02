@@ -3,11 +3,15 @@
    ============================================================ */
 
 /**
- * Navigate to a page with a smooth transition.
+ * Navigate to a page with a slide-left animation.
  * @param {string} href - relative URL to navigate to
  */
 function navigateTo(href) {
-  window.location.href = href;
+  var shell = document.querySelector('.shell');
+  shell.style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
+  shell.style.transform = 'translateX(-100%)';
+  shell.style.opacity = '0';
+  setTimeout(function () { window.location.href = href; }, 300);
 }
 
 /**

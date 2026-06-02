@@ -1,67 +1,10 @@
 /* ============================================================
-   pages/guest-details.css — Guest Details page
+   pages/guest-details.css — Guest Details page specifics
+   Shared layout: css/layout.css
    ============================================================ */
 
-.shell { background: #0F1A0A; }
-
-/* ── SECTION 1 : MENU COMPONENT HEADER — 390×144 ───────────── */
-
-.menu-component {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--sp4) 110px var(--sp16);
-  width: 390px;
-  height: 144px;
-  background: #0F1A0A;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.menu-logo {
-  width: 161.57px;
-  height: 58.71px;
-  flex: none;
-  position: relative;
-  top: 3px;
-  left: 3px;
-}
-
-
-/* ── SECTION 2 : GUIDELINE CONTENT — 390×545 ───────────────── */
-
-.guideline-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: var(--sp3) var(--sp6);
-  gap: 16px;
-  width: 390px;
-  height: 545px;
-  background: #0F1A0A;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.guideline-content::-webkit-scrollbar { display: none; }
-
-
-/* ── PAGE TITLE — "A little about you" · 145×24 ────────────── */
-
-.page-title {
-  width: 145px;
-  height: 24px;
-  font-family: var(--font-sans);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.04em;
-  color: var(--ev-lime);
-  margin: 0;
-  flex-shrink: 0;
-}
+/* gap override for this page */
+.guideline-content { gap: 16px; }
 
 
 /* ── INPUT SECTIONS — 342×63, gap 4 ────────────────────────── */
@@ -75,24 +18,22 @@
   flex-shrink: 0;
 }
 
-/* Label — 500 Medium, 10px, dim white */
 .input-label {
   font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 500;
   line-height: 14px;
   letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.65);        /* #FFFFFFA6 */
+  color: rgba(255, 255, 255, 0.65);
 }
 
-/* Input field — 342×45, padding 12px 16px, radius sm, bg #162010 */
 .input-field {
   width: 342px;
   height: 45px;
-  padding: var(--sp3) var(--sp4);          /* 12px 16px */
-  background: var(--ev-bg-card);           /* #162010 */
-  border: 1px solid var(--ev-bg-card-border); /* #2D4220 */
-  border-radius: var(--ev-radius-sm);      /* 6px */
+  padding: var(--sp3) var(--sp4);
+  background: var(--ev-bg-card);
+  border: 1px solid var(--ev-bg-card-border);
+  border-radius: var(--ev-radius-sm);
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 400;
@@ -104,28 +45,18 @@
 .input-field::placeholder { color: rgba(255, 255, 255, 0.25); }
 .input-field:focus { border-color: var(--ev-lime-border); }
 
-/* Mobile input — dropdown + separator + number field */
+/* Lime border for mobile and email */
+.mobile-section .input-field,
+.email-section .input-field { border-color: var(--ev-lime); }
+
+
+/* ── MOBILE INPUT — dropdown + separator + number ────────────── */
+
 .mobile-input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0;
   padding: 0;
-}
-
-.mobile-code {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--ev-white);
-  padding: 0 var(--sp2) 0 var(--sp4);     /* 0 8px 0 16px */
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  flex-shrink: 0;
 }
 
 .mobile-sep {
@@ -150,11 +81,10 @@
 
 .mobile-number::placeholder { color: rgba(255, 255, 255, 0.25); }
 
-/* Custom country dropdown */
-.country-dropdown {
-  position: relative;
-  flex-shrink: 0;
-}
+
+/* ── COUNTRY DROPDOWN ────────────────────────────────────────── */
+
+.country-dropdown { position: relative; flex-shrink: 0; }
 
 .country-selected {
   display: flex;
@@ -186,9 +116,7 @@
   transition: transform 0.2s;
 }
 
-.country-dropdown.open .mobile-arrow {
-  transform: rotate(180deg);
-}
+.country-dropdown.open .mobile-arrow { transform: rotate(180deg); }
 
 .country-list {
   display: none;
@@ -196,7 +124,7 @@
   top: calc(100% + 8px);
   left: 0;
   width: 160px;
-  max-height: 192px;        /* ~6 items × 32px */
+  max-height: 192px;
   overflow-y: auto;
   background: var(--ev-bg-card);
   border: 1px solid var(--ev-lime);
@@ -211,7 +139,6 @@
 
 .country-list::-webkit-scrollbar { width: 4px; }
 .country-list::-webkit-scrollbar-thumb { background: var(--ev-lime); border-radius: 2px; }
-
 .country-dropdown.open .country-list { display: block; }
 
 .country-list li {
@@ -230,14 +157,9 @@
   color: var(--ev-lime);
 }
 
-/* Lime border overrides for mobile and email sections */
-.mobile-section .input-field,
-.email-section .input-field {
-  border-color: var(--ev-lime);            /* #C8F56A */
-}
 
+/* ── EMAIL VALIDATION ────────────────────────────────────────── */
 
-/* Email error message */
 .email-error {
   display: none;
   font-family: var(--font-sans);
@@ -249,54 +171,4 @@
   margin-top: 2px;
 }
 
-/* Red border on invalid email */
-.input-error {
-  border-color: #ff5050 !important;
-}
-
-
-/* Italic note */
-.details-note {
-  width: 342px;
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 14px;
-  letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-
-/* ── SECTION 3 : BTN CONTENT — 390×77 ──────────────────────── */
-
-.btn-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 390px;
-  height: 77px;
-  padding: var(--sp4);
-  background: #0F1A0A;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.btn-primary {
-  width: 358px;
-  height: 45px;
-  padding: var(--sp3) 0;
-  background: var(--ev-lime);
-  border: none;
-  border-radius: var(--ev-radius-md);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: #0F1A0A;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: opacity 0.2s;
-}
-
-.btn-primary:active { opacity: 0.85; }
+.input-error { border-color: #ff5050 !important; }

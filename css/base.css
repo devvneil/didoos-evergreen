@@ -34,6 +34,7 @@ html, body {
 .safe-top {
   height: 44px;
   flex-shrink: 0;
+  background: #0F1A0A;
 }
 
 .safe-bottom {
