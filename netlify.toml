@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/"
-  to = "/welcome.html"
-  status = 302

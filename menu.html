@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Didoo's Evergreen</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cormorant+Garamond:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/home.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- iOS top safe area -->
+  <div class="safe-top"></div>
+
+  <!-- SCATTER SCENE — no top/bottom bars on home screen -->
+  <main class="home-scene" aria-label="Menu categories">
+
+    <!-- ── CATEGORY NODES ── -->
+
+    <!-- Breakfast — top right -->
+    <a class="category-node node--breakfast" href="#" aria-label="Breakfast menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Steam -->
+          <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M9 8c0-1.2 2-1.5 2-3S9 4 9 3"/>
+          <path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M14 8c0-1.2 2-1.5 2-3S14 4 14 3"/>
+          <!-- Cup body (filled) -->
+          <path fill="currentColor" d="M4 9h16v7a2 2 0 01-2 2H6a2 2 0 01-2-2V9z"/>
+          <!-- Handle -->
+          <path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M20 12h.5a2.5 2.5 0 010 5H20"/>
+          <!-- Saucer (filled) -->
+          <path fill="currentColor" d="M2 20h20v2H2z"/>
+        </svg>
+      </div>
+      <span class="node-label">Breakfast</span>
+    </a>
+
+    <!-- Starters — centre -->
+    <a class="category-node node--starters" href="#" aria-label="Starters menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Left leaf (filled) -->
+          <path fill="currentColor" d="M9 13C7 9 8 5 11 4c0 3 0 6 1 8"/>
+          <!-- Right leaf (filled) -->
+          <path fill="currentColor" d="M15 13c2-4 1-8-2-9 0 3 0 6-1 8"/>
+          <!-- Centre berry -->
+          <circle fill="currentColor" cx="12" cy="10" r="1.5"/>
+          <!-- Bowl (filled) -->
+          <path fill="currentColor" d="M3 13h18c0 5-4 9-9 9S3 18 3 13z"/>
+        </svg>
+      </div>
+      <span class="node-label">Starters</span>
+    </a>
+
+    <!-- Israeli — left -->
+    <a class="category-node node--israeli" href="#" aria-label="Israeli menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Star of David: two overlapping triangles (stroked, not filled) -->
+          <polygon fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" points="12,3 21.5,19.5 2.5,19.5"/>
+          <polygon fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" points="12,21 2.5,4.5 21.5,4.5"/>
+        </svg>
+      </div>
+      <span class="node-label">Israeli</span>
+    </a>
+
+    <!-- Mains — far left → links to Indian menu -->
+    <a class="category-node node--mains" href="pages/menu-indian.html" aria-label="Mains menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Plate (filled circle) -->
+          <circle fill="currentColor" cx="14" cy="13" r="7"/>
+          <!-- Fork tines -->
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="5" y1="5" x2="5" y2="10"/>
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="7" y1="5" x2="7" y2="10"/>
+          <line stroke="currentColor" stroke-width="1"   stroke-linecap="round" x1="6" y1="5" x2="6" y2="8"/>
+          <!-- Fork neck + handle -->
+          <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M5 10Q6 12.5 7 10"/>
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="6" y1="12.5" x2="6" y2="21"/>
+        </svg>
+      </div>
+      <span class="node-label">Mains</span>
+    </a>
+
+    <!-- Bakes — left -->
+    <a class="category-node node--bakes" href="#" aria-label="Bakes menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Pizza circle (stroked outline) -->
+          <circle fill="none" stroke="currentColor" stroke-width="1.5" cx="12" cy="12" r="9"/>
+          <!-- Slice dividers -->
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="12" y1="3"   x2="12" y2="21"/>
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="3.8" y1="7.5" x2="20.2" y2="16.5"/>
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="3.8" y1="16.5" x2="20.2" y2="7.5"/>
+          <!-- Toppings (filled dots) -->
+          <circle fill="currentColor" cx="9"  cy="9.5" r="1.4"/>
+          <circle fill="currentColor" cx="15" cy="9.5" r="1.4"/>
+          <circle fill="currentColor" cx="9"  cy="15"  r="1.4"/>
+        </svg>
+      </div>
+      <span class="node-label">Bakes</span>
+    </a>
+
+    <!-- Drinks — centre -->
+    <a class="category-node node--drinks" href="#" aria-label="Drinks menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Cocktail glass body (filled) -->
+          <path fill="currentColor" d="M5 3l2 12h10l2-12H5z"/>
+          <!-- Stem -->
+          <line stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="12" y1="15" x2="12" y2="21"/>
+          <!-- Base -->
+          <line stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="8" y1="21" x2="16" y2="21"/>
+          <!-- Straw -->
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="15" y1="5" x2="19" y2="1"/>
+          <!-- Cherry (filled dot) -->
+          <circle fill="currentColor" cx="19" cy="1" r="2"/>
+        </svg>
+      </div>
+      <span class="node-label">Drinks</span>
+    </a>
+
+    <!-- Desserts — bottom right -->
+    <a class="category-node node--desserts" href="#" aria-label="Desserts menu">
+      <div class="node-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <!-- Ice cream scoops (filled) -->
+          <circle fill="currentColor" cx="9"  cy="12" r="3.5"/>
+          <circle fill="currentColor" cx="15" cy="12" r="3.5"/>
+          <circle fill="currentColor" cx="12" cy="9"  r="3.5"/>
+          <!-- Bowl body (filled) -->
+          <path fill="currentColor" d="M5 17h14l-1 4H6z"/>
+          <!-- Bowl top rim -->
+          <line stroke="currentColor" stroke-width="1.5" stroke-linecap="round" x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </div>
+      <span class="node-label">Desserts</span>
+    </a>
+
+    <!-- ── LARGE LOGO ── -->
+    <div class="home-logo" aria-label="Didoo's Evergreen">
+      <span class="home-logo-didoos">Didoo's</span>
+      <div class="home-logo-evergreen-row">
+        <span class="home-logo-evergreen-text">Evergreen</span>
+        <!-- Leaf SVG -->
+        <svg class="home-logo-leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M17 8C17 8 16 3 12 2C8 1 4 4 4 9C4 13.5 7.5 17 11 18.2V22H13V18C16 16.5 20 13 20 9C20 5.5 18 3 18 3L17 8Z" fill="#c8f56a"/>
+          <path d="M12 8 Q11 12 9 17" stroke="#0d1a09" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- iOS bottom safe area -->
+  <div class="safe-bottom"></div>
+</div>
+
+<!-- Scripts -->
+<script src="js/navigation.js"></script>
+</body>
+</html>

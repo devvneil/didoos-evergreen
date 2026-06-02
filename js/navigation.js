@@ -18,7 +18,7 @@ function goBack() {
   if (document.referrer && document.referrer !== window.location.href) {
     window.history.back();
   } else {
-    navigateTo('../index.html');
+    navigateTo('../menu.html');
   }
 }
 
