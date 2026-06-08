@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="AR Food Experience — Didoo's Evergreen Café" />
+  <title>AR Experience — Didoo's Evergreen</title>
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/pages/ar.css" />
+
+  <!--
+    ┌─────────────────────────────────────────────────────┐
+    │  8th Wall Open Source (8thwall.org) — SLAM Engine   │
+    │  TODO: Replace with self-hosted 8th Wall bundle     │
+    │  once the binary distribution is set up.            │
+    │  https://github.com/8thwall/8thwall                 │
+    └─────────────────────────────────────────────────────┘
+  -->
+
+  <!-- model-viewer: cross-platform AR (iOS Quick Look + Android Scene Viewer) -->
+  <!-- Acts as the AR renderer until 8th Wall SLAM is wired in -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+<div class="shell">
+
+  <div class="safe-top"></div>
+
+  <!-- MENU COMPONENT HEADER — 390×144 -->
+  <header class="menu-component">
+    <img class="menu-logo" src="../assets/Welcome Logo.svg" alt="Didoo's Evergreen" />
+  </header>
+
+  <!-- AR CONTENT — 390×545 -->
+  <div class="ar-content" id="arContent">
+
+    <!-- Loading overlay (shown until model is ready) -->
+    <div class="ar-loading" id="arLoading">
+      <div class="ar-spinner"></div>
+      <span class="ar-loading-text">Preparing your AR experience…</span>
+    </div>
+
+    <!--
+      model-viewer renders a 3D preview of the dish inside the shell.
+      Tapping "View in AR" hands off to:
+        • iOS  → Apple AR Quick Look (native, no camera permission prompt needed)
+        • Android → Google Scene Viewer / WebXR (native surface detection)
+      ar-modes order = prefer webxr → scene-viewer → quick-look
+    -->
+    <model-viewer
+      id="ar-viewer"
+      src="../assets/models/dish.glb"
+      alt="Didoo's Evergreen Indian curry in AR"
+      ar
+      ar-modes="webxr scene-viewer"
+      ar-scale="fixed"
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="2000"
+      rotation-per-second="30deg"
+      shadow-intensity="1.2"
+      exposure="1.1"
+      environment-image="neutral"
+    >
+      <!-- Custom AR button inside model-viewer slot -->
+      <button class="ar-launch-btn hidden" id="arLaunchBtn" slot="ar-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        Place on your table
+      </button>
+    </model-viewer>
+
+    <!-- Status pill — floats over the viewer -->
+    <div class="ar-status-bar" id="arStatusBar">
+      <div class="ar-status-dot"></div>
+      <span class="ar-status-text" id="arStatusText">Tap the button to place on any surface</span>
+    </div>
+
+    <!-- No-AR fallback (shown if device doesn't support AR at all) -->
+    <div class="ar-no-support" id="arNoSupport">
+      <span class="ar-no-support-icon">📷</span>
+      <p class="ar-no-support-title">AR not available</p>
+      <p class="ar-no-support-text">Your browser doesn't support AR on this device. Try opening this page in Safari (iOS) or Chrome (Android).</p>
+    </div>
+
+  </div>
+
+  <!-- BTN CONTENT — 390×77 -->
+  <div class="btn-content">
+    <button class="btn-primary" onclick="navigateTo('thank-you.html')">Done</button>
+  </div>
+
+  <div class="safe-bottom"></div>
+
+</div>
+<script src="../js/navigation.js"></script>
+<script>
+  var viewer     = document.getElementById('ar-viewer');
+  var loading    = document.getElementById('arLoading');
+  var launchBtn  = document.getElementById('arLaunchBtn');
+  var statusText = document.getElementById('arStatusText');
+  var noSupport  = document.getElementById('arNoSupport');
+
+  /* Hide loading overlay once the 3D model is ready */
+  viewer.addEventListener('load', function () {
+    loading.classList.add('hidden');
+    launchBtn.classList.remove('hidden');
+  });
+
+  /* Model failed to load — likely GLB not added yet */
+  viewer.addEventListener('error', function () {
+    loading.classList.add('hidden');
+    statusText.textContent = 'Model loading…  drop dish.glb in assets/models/';
+  });
+
+  /* Update status text when AR session starts */
+  viewer.addEventListener('ar-status', function (e) {
+    if (e.detail.status === 'session-started') {
+      statusText.textContent = 'Point at a flat surface';
+    } else if (e.detail.status === 'object-placed') {
+      statusText.textContent = 'Dish placed ✓  Move around to explore';
+    } else if (e.detail.status === 'failed') {
+      noSupport.classList.add('visible');
+    }
+  });
+
+  /* Check AR support on page load */
+  viewer.addEventListener('model-visibility', function () {
+    if (!viewer.canActivateAR) {
+      noSupport.classList.add('visible');
+      loading.classList.add('hidden');
+    }
+  });
+</script>
+</body>
+</html>
