@@ -106,6 +106,93 @@
 }
 
 
+/* ============================================================
+   BASE MENU DESIGN — 7-section layout for menu/listing pages
+   Total: 44 + 55 + 77 + 68 + 500 + 66 + 34 = 844px
+   ============================================================ */
+
+/* ── 2. TOP BAR — 390×55 ────────────────────────────────────── */
+
+.top-bar {
+  width: 390px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp3) var(--sp4);
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+
+/* ── 3. SEARCH BAR — 390×77 ─────────────────────────────────── */
+
+.search-bar {
+  width: 390px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  padding: var(--sp4) var(--sp2);
+  background: #0F1A0A;
+  border-bottom: 1px solid var(--ev-bg-border);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+
+/* ── 4. TAB BAR — 390×68 ────────────────────────────────────── */
+
+.tab-bar {
+  width: 390px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--sp3) var(--sp4);
+  background: #0F1A0A;
+  border-bottom: 1px solid var(--ev-bg-border);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-bar::-webkit-scrollbar { display: none; }
+
+
+/* ── 5. SCROLL AREA — 390×500 ───────────────────────────────── */
+
+.scroll-area {
+  width: 390px;
+  height: 500px;
+  padding: var(--sp3) var(--sp4) 0;
+  background: #0F1A0A;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.scroll-area::-webkit-scrollbar { display: none; }
+
+
+/* ── 6. BOTTOM BAR — 390×66 ─────────────────────────────────── */
+
+.bottom-bar {
+  width: 390px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp4) var(--sp3);
+  background: #0F1A0A;
+  border-top: 1px solid var(--ev-lime-border);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+
 /* ── ITALIC NOTE — 10px italic dim white ─────────────────────── */
 
 .page-note {

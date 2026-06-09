@@ -17,36 +17,49 @@
 
 
 /* ── MENU ICON CARDS ──────────────────────────────────────── */
+/*
+  Each SVG is 136×136 but the visual circle sits at offset (28px left, 16px top)
+  within that space. Figma positions refer to the circle's top-left corner.
+  So CSS top  = figma_top  - 16
+     CSS left = figma_left - 28
+*/
 
 .menu-icon {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: var(--ev-radius-full);
-  border: 1px solid #C8F56A59;
-  box-shadow: 0px 12px 28px 0px #00000066;
-  padding: 12px 19px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  width: 136px;
+  height: 136px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: opacity 0.15s;
 }
 
-.menu-icon:active { opacity: 0.8; }
+.menu-icon:active { opacity: 0.75; }
 
 .menu-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 136px;
+  height: 136px;
   display: block;
 }
 
 
-/* ── ICON POSITIONS ───────────────────────────────────────── */
+/* ── ICON POSITIONS (figma top/left adjusted by -16 / -28) ── */
 
-.menu-icon--breakfast {
-  top: 45px;
-  left: 251px;
-}
+/* Breakfast  — figma top:45   left:251 */
+.menu-icon--breakfast { top: 29px;  left: 223px; }
+
+/* Starters   — figma top:117  left:147 */
+.menu-icon--starters  { top: 101px; left: 119px; }
+
+/* Israeli    — figma top:221  left:81  */
+.menu-icon--israeli   { top: 205px; left: 53px;  }
+
+/* Mains      — figma top:342  left:51  (calc 50% resolved to fixed px) */
+.menu-icon--mains     { top: 326px; left: 23px;  }
+
+/* Bakes      — figma top:463  left:81  */
+.menu-icon--bakes     { top: 447px; left: 53px;  }
+
+/* Drinks     — figma top:567  left:147 */
+.menu-icon--drinks    { top: 551px; left: 119px; }
+
+/* Desserts   — figma top:641  left:251 */
+.menu-icon--desserts  { top: 625px; left: 223px; }

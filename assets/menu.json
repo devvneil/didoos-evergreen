@@ -1,0 +1,272 @@
+{
+  "breakfast": {
+    "Healthy": [
+      {
+        "id": "bf-h-1",
+        "name": "Healthy Yogurt",
+        "price": 280,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-h-2",
+        "name": "Fruit Yogurt with Honey",
+        "price": 270,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-h-3",
+        "name": "Muesli Mixed Fruit",
+        "price": 290,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-h-4",
+        "name": "Banana Honey Porridge",
+        "price": 200,
+        "veg": true,
+        "available": false,
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Eggs": [
+      {
+        "id": "bf-e-1",
+        "name": "Eggs Benedict",
+        "price": 320,
+        "veg": false,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-2",
+        "name": "Masala Omelette",
+        "price": 180,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Toast": [
+      {
+        "id": "bf-t-1",
+        "name": "French Toast",
+        "price": 240,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-t-2",
+        "name": "Cinnamon Toast",
+        "price": 160,
+        "veg": true,
+        "available": false,
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Big Breakfast": [
+      {
+        "id": "bf-bb-1",
+        "name": "Full English",
+        "price": 480,
+        "veg": false,
+        "available": true,
+        "glb": "assets/models/dish.glb",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-2",
+        "name": "Evergreen Platter",
+        "price": 520,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "starters": {
+    "Salad": [
+      {
+        "id": "st-s-1",
+        "name": "Greek Salad",
+        "price": 240,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-s-2",
+        "name": "Caesar Salad",
+        "price": 260,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Soups": [
+      {
+        "id": "st-so-1",
+        "name": "Tomato Bisque",
+        "price": 180,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-2",
+        "name": "Lentil Shorba",
+        "price": 160,
+        "veg": true,
+        "available": false,
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Appetisers": [
+      {
+        "id": "st-a-1",
+        "name": "Crispy Calamari",
+        "price": 320,
+        "veg": false,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-a-2",
+        "name": "Paneer Tikka",
+        "price": 280,
+        "veg": true,
+        "available": true,
+        "glb": "assets/models/dish.glb",
+        "image": ""
+      }
+    ],
+    "Loaded Fries": [
+      {
+        "id": "st-lf-1",
+        "name": "Peri Peri Fries",
+        "price": 200,
+        "veg": true,
+        "available": true,
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-lf-2",
+        "name": "Cheesy Bacon Fries",
+        "price": 280,
+        "veg": false,
+        "available": false,
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "mains": {
+    "Curry": [
+      { "id": "mn-c-1", "name": "Butter Chicken", "price": 380, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
+      { "id": "mn-c-2", "name": "Palak Paneer", "price": 320, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Rice": [
+      { "id": "mn-r-1", "name": "Jeera Rice", "price": 160, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "mn-r-2", "name": "Coconut Rice", "price": 180, "veg": true, "available": false, "glb": "", "image": "" }
+    ],
+    "Biryani": [
+      { "id": "mn-b-1", "name": "Chicken Biryani", "price": 420, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
+      { "id": "mn-b-2", "name": "Veg Biryani", "price": 320, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Dal": [
+      { "id": "mn-d-1", "name": "Dal Makhani", "price": 280, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "mn-d-2", "name": "Dal Tadka", "price": 240, "veg": true, "available": false, "glb": "", "image": "" }
+    ]
+  },
+  "israeli": {
+    "Shakshuka": [
+      { "id": "is-sh-1", "name": "Classic Shakshuka", "price": 320, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "is-sh-2", "name": "Green Shakshuka", "price": 340, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Hummus": [
+      { "id": "is-h-1", "name": "Classic Hummus", "price": 220, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "is-h-2", "name": "Roasted Red Pepper Hummus", "price": 260, "veg": true, "available": false, "glb": "", "image": "" }
+    ],
+    "Pita": [
+      { "id": "is-p-1", "name": "Pita with Za'atar", "price": 180, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Falafel": [
+      { "id": "is-f-1", "name": "Falafel Wrap", "price": 280, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "is-f-2", "name": "Falafel Plate", "price": 320, "veg": true, "available": false, "glb": "", "image": "" }
+    ]
+  },
+  "bakes": {
+    "Pizza": [
+      { "id": "bk-p-1", "name": "Margherita", "price": 360, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "bk-p-2", "name": "BBQ Chicken", "price": 420, "veg": false, "available": true, "glb": "", "image": "" }
+    ],
+    "Calzone": [
+      { "id": "bk-c-1", "name": "Spinach Calzone", "price": 340, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Flatbread": [
+      { "id": "bk-f-1", "name": "Herb Flatbread", "price": 220, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "bk-f-2", "name": "Cheese Flatbread", "price": 260, "veg": true, "available": false, "glb": "", "image": "" }
+    ],
+    "Puffs": [
+      { "id": "bk-pu-1", "name": "Veg Puff", "price": 120, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "bk-pu-2", "name": "Chicken Puff", "price": 140, "veg": false, "available": true, "glb": "", "image": "" }
+    ]
+  },
+  "drinks": {
+    "Hot": [
+      { "id": "dr-h-1", "name": "Filter Coffee", "price": 80, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "dr-h-2", "name": "Masala Chai", "price": 70, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Cold": [
+      { "id": "dr-c-1", "name": "Cold Brew", "price": 180, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "dr-c-2", "name": "Iced Matcha Latte", "price": 200, "veg": true, "available": false, "glb": "", "image": "" }
+    ],
+    "Smoothies": [
+      { "id": "dr-s-1", "name": "Mango Smoothie", "price": 180, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "dr-s-2", "name": "Berry Blast", "price": 200, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Juices": [
+      { "id": "dr-j-1", "name": "Fresh Orange Juice", "price": 140, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "dr-j-2", "name": "Watermelon Juice", "price": 130, "veg": true, "available": false, "glb": "", "image": "" }
+    ]
+  },
+  "desserts": {
+    "Cakes": [
+      { "id": "ds-c-1", "name": "Chocolate Lava Cake", "price": 280, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "ds-c-2", "name": "Carrot Cake", "price": 240, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Ice Cream": [
+      { "id": "ds-i-1", "name": "Vanilla Bean", "price": 160, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "ds-i-2", "name": "Kulfi", "price": 140, "veg": true, "available": false, "glb": "", "image": "" }
+    ],
+    "Pastries": [
+      { "id": "ds-p-1", "name": "Croissant", "price": 180, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "ds-p-2", "name": "Pain au Chocolat", "price": 200, "veg": true, "available": true, "glb": "", "image": "" }
+    ],
+    "Waffles": [
+      { "id": "ds-w-1", "name": "Classic Waffles", "price": 260, "veg": true, "available": true, "glb": "", "image": "" },
+      { "id": "ds-w-2", "name": "Nutella Waffles", "price": 300, "veg": true, "available": false, "glb": "", "image": "" }
+    ]
+  }
+}
