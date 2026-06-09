@@ -54,7 +54,56 @@
 
   <!-- 5. SCROLL AREA — 390×500 -->
   <div class="scroll-area" id="scrollArea">
-    <!-- dish rows injected by JS -->
+
+    <!-- Subheader -->
+    <div class="sub-header">
+      <span class="sub-header-label">HEALTHY</span>
+      <span class="sub-header-line"></span>
+    </div>
+
+    <!-- Food item — available -->
+    <div class="food-item">
+      <span class="diet-dot veg"></span>
+      <div class="dish-name-group">
+        <span class="dish-name">Healthy Yogurt</span>
+      </div>
+      <div class="dish-price-group">
+        <span class="dish-price">₹ 280</span>
+        <button class="icon-stepper" title="Add">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="icon-edit" title="Edit / View">
+          <img src="../assets/Menu Icons/edit-icon.svg" width="16" height="16" alt="edit" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Food item — sold out -->
+    <div class="food-item">
+      <span class="diet-dot veg"></span>
+      <div class="dish-name-group">
+        <span class="dish-name unavailable">Banana Honey Porridge</span>
+        <span class="sold-out-badge">Sold Out</span>
+      </div>
+      <div class="dish-price-group">
+        <span class="dish-price unavailable">₹ 200</span>
+        <button class="icon-stepper" title="Add" disabled style="opacity:0.25;pointer-events:none;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="icon-edit" title="Edit / View" disabled style="opacity:0.25;pointer-events:none;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 2.5C2 2.22 2.22 2 2.5 2H9.5L12 4.5V13.5C12 13.78 11.78 14 11.5 14H2.5C2.22 14 2 13.78 2 13.5V2.5Z" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"/>
+            <path d="M10.5 11L14 7.5L12.5 6L9 9.5V11H10.5Z" fill="rgba(255,255,255,0.55)"/>
+            <path d="M12.5 6L14 7.5" stroke="rgba(255,255,255,0.55)" stroke-width="0.8"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
   </div>
 
   <!-- 6. BOTTOM BAR — 390×66 -->
@@ -68,28 +117,26 @@
 </div>
 <script src="../js/navigation.js"></script>
 <script>
+  /* ── Category → sub-tab map ──────────────────────────────── */
+  var TABS = {
+    breakfast: ['Healthy', 'Eggs', 'Toast', 'Big Breakfast'],
+    starters:  ['Salad', 'Soups', 'Appetisers', 'Loaded Fries'],
+    israeli:   ['Shakshuka', 'Hummus', 'Pita', 'Falafel'],
+    mains:     ['Curry', 'Rice', 'Biryani', 'Dal'],
+    bakes:     ['Pizza', 'Calzone', 'Flatbread', 'Puffs'],
+    drinks:    ['Hot', 'Cold', 'Smoothies', 'Juices'],
+    desserts:  ['Cakes', 'Ice Cream', 'Pastries', 'Waffles']
+  };
+
   /* ── Read ?category= from URL ────────────────────────────── */
-  var params      = new URLSearchParams(window.location.search);
-  var category    = (params.get('category') || 'breakfast').toLowerCase();
+  var params   = new URLSearchParams(window.location.search);
+  var category = (params.get('category') || 'breakfast').toLowerCase();
+  var tabs     = TABS[category] || TABS['breakfast'];
 
-  var tabBar      = document.getElementById('tabBar');
-  var scrollArea  = document.getElementById('scrollArea');
-  var activeTab   = 0;
-  var menuData    = null;   /* loaded from menu.json */
-  var tabs        = [];
+  /* ── Render tabs ─────────────────────────────────────────── */
+  var tabBar    = document.getElementById('tabBar');
+  var activeTab = 0;
 
-  /* ── Fetch menu data then boot UI ───────────────────────── */
-  fetch('../assets/menu.json')
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      menuData = data;
-      var catData = menuData[category] || {};
-      tabs = Object.keys(catData);
-      renderTabs();
-      renderDishes();
-    });
-
-  /* ── Render tab pills ────────────────────────────────────── */
   function renderTabs() {
     tabBar.innerHTML = '';
     tabs.forEach(function (label, i) {
@@ -99,91 +146,12 @@
       btn.addEventListener('click', function () {
         activeTab = i;
         renderTabs();
-        renderDishes();
       });
       tabBar.appendChild(btn);
     });
   }
 
-  /* ── Render dish rows ────────────────────────────────────── */
-  function renderDishes() {
-    scrollArea.innerHTML = '';
-    if (!menuData || !tabs.length) return;
-
-    var subTab  = tabs[activeTab];
-    var dishes  = (menuData[category] || {})[subTab] || [];
-
-    /* Section header */
-    var header = document.createElement('div');
-    header.className = 'section-header';
-    header.innerHTML =
-      '<span class="section-label">' + subTab.toUpperCase() + '</span>' +
-      '<span class="section-line"></span>';
-    scrollArea.appendChild(header);
-
-    if (!dishes.length) {
-      var empty = document.createElement('p');
-      empty.style.cssText = 'color:rgba(255,255,255,0.3);font-size:13px;padding:24px 0;text-align:center;';
-      empty.textContent = 'No items yet';
-      scrollArea.appendChild(empty);
-      return;
-    }
-
-    /* Dish rows */
-    dishes.forEach(function (dish) {
-      var row = document.createElement('div');
-      row.className = 'dish-row' + (dish.available ? '' : ' sold-out');
-
-      /* Dot type */
-      var dotClass = dish.available
-        ? (dish.veg ? 'veg' : 'nonveg')
-        : 'soldout';
-
-      /* AR / image button — shown if glb or image exists */
-      var hasPreview = dish.glb || dish.image;
-      var arBtnHtml  = hasPreview
-        ? '<button class="dish-ar-btn" onclick="openPreview(\'' + dish.id + '\')" title="View 3D / Image">' +
-            (dish.glb
-              ? '<svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L2 5.5V12.5L9 16L16 12.5V5.5L9 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M2 5.5L9 9M9 9L16 5.5M9 9V16" stroke="currentColor" stroke-width="1.3"/></svg>'
-              : '<svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><circle cx="6.5" cy="7.5" r="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 12L6 8.5L9 11L12 8L16 12" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>'
-            ) +
-          '</button>'
-        : '';
-
-      row.innerHTML =
-        '<div class="dish-left">' +
-          '<div class="dish-name-row">' +
-            '<span class="veg-dot ' + dotClass + '"></span>' +
-            '<span class="dish-name">' + dish.name + '</span>' +
-          '</div>' +
-          (!dish.available ? '<span class="sold-out-badge">Sold Out</span>' : '') +
-        '</div>' +
-        '<div class="dish-right">' +
-          '<span class="dish-price">₹ ' + dish.price + '</span>' +
-          '<button class="dish-add-btn" title="Add to order">' +
-            '<svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4V14M4 9H14" stroke="#C8F56A" stroke-width="1.8" stroke-linecap="round"/></svg>' +
-          '</button>' +
-          arBtnHtml +
-        '</div>';
-
-      scrollArea.appendChild(row);
-    });
-  }
-
-  /* ── Open 3D / image preview ─────────────────────────────── */
-  function openPreview(dishId) {
-    var dish = null;
-    var catData = menuData[category] || {};
-    Object.values(catData).forEach(function (arr) {
-      arr.forEach(function (d) { if (d.id === dishId) dish = d; });
-    });
-    if (!dish) return;
-    if (dish.glb) {
-      navigateTo('ar-experience.html');   /* pass to AR page — extend later */
-    } else if (dish.image) {
-      /* TODO: lightbox image */
-    }
-  }
+  renderTabs();
 </script>
 </body>
 </html>
