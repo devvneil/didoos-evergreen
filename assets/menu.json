@@ -85,7 +85,7 @@
         "price": 480,
         "veg": false,
         "available": true,
-        "glb": "assets/models/dish.glb",
+        "glb": "assets/models/dish.glb?v=2",
         "image": ""
       },
       {
@@ -156,7 +156,7 @@
         "price": 280,
         "veg": true,
         "available": true,
-        "glb": "assets/models/dish.glb",
+        "glb": "assets/models/dish.glb?v=2",
         "image": ""
       }
     ],
@@ -183,7 +183,7 @@
   },
   "mains": {
     "Indian": [
-      { "id": "mn-c-1", "name": "Dal Makhani", "price": 380, "veg": true, "available": true, "glb": "assets/models/dish.glb", "image": "" },
+      { "id": "mn-c-1", "name": "Dal Makhani", "price": 380, "veg": true, "available": true, "glb": "assets/models/dish.glb?v=2", "image": "" },
       { "id": "mn-c-2", "name": "Palak Paneer", "price": 320, "veg": true, "available": true, "glb": "assets/models/indian_curry.glb", "usdz": "assets/models/Indian_curry.usdz", "image": "" }
     ],
     "Chinese": [
@@ -191,7 +191,7 @@
       { "id": "mn-r-2", "name": "Coconut Rice", "price": 180, "veg": true, "available": false, "glb": "", "image": "" }
     ],
     "BBQ": [
-      { "id": "mn-b-1", "name": "Chicken Biryani", "price": 420, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
+      { "id": "mn-b-1", "name": "Chicken Biryani", "price": 420, "veg": false, "available": true, "glb": "assets/models/dish.glb?v=2", "image": "" },
       { "id": "mn-b-2", "name": "Veg Biryani", "price": 320, "veg": true, "available": true, "glb": "", "image": "" }
     ],
     "Intercontinental": [
