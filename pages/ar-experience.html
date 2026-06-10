@@ -108,6 +108,16 @@
   var statusText = document.getElementById('arStatusText');
   var noSupport  = document.getElementById('arNoSupport');
 
+  /* ── Load model based on ?glb= / ?usdz= / ?name= from URL ── */
+  var params = new URLSearchParams(window.location.search);
+  var glb    = params.get('glb');
+  var usdz   = params.get('usdz');
+  var name   = params.get('name');
+
+  if (glb)  viewer.setAttribute('src', '../' + glb);
+  if (usdz) viewer.setAttribute('ios-src', '../' + usdz);
+  if (name) viewer.setAttribute('alt', name + ' — Didoo\'s Evergreen, in AR');
+
   /* Hide loading overlay once the 3D model is ready */
   viewer.addEventListener('load', function () {
     loading.classList.add('hidden');

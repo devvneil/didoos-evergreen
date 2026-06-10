@@ -183,8 +183,8 @@
   },
   "mains": {
     "Indian": [
-      { "id": "mn-c-1", "name": "Dal Makhani", "price": 380, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
-      { "id": "mn-c-2", "name": "Palak Paneer", "price": 320, "veg": true, "available": true, "glb": "", "image": "" }
+      { "id": "mn-c-1", "name": "Dal Makhani", "price": 380, "veg": true, "available": true, "glb": "assets/models/dish.glb", "image": "" },
+      { "id": "mn-c-2", "name": "Palak Paneer", "price": 320, "veg": true, "available": true, "glb": "assets/models/indian_curry.glb", "usdz": "assets/models/Indian_curry.usdz", "image": "" }
     ],
     "Chinese": [
       { "id": "mn-r-1", "name": "Jeera Rice", "price": 160, "veg": true, "available": true, "glb": "", "image": "" },

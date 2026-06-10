@@ -102,7 +102,11 @@
     if (dish.available) {
       row.classList.add('clickable');
       row.addEventListener('click', function () {
-        navigateTo('ar-experience.html');
+        var arParams = new URLSearchParams();
+        if (dish.glb)  arParams.set('glb', dish.glb);
+        if (dish.usdz) arParams.set('usdz', dish.usdz);
+        arParams.set('name', dish.name);
+        navigateTo('ar-experience.html?' + arParams.toString());
       });
     }
 
