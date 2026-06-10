@@ -106,6 +106,7 @@
         if (dish.glb)  arParams.set('glb', dish.glb);
         if (dish.usdz) arParams.set('usdz', dish.usdz);
         arParams.set('name', dish.name);
+        arParams.set('category', category);
         navigateTo('ar-experience.html?' + arParams.toString());
       });
     }

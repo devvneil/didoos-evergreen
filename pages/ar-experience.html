@@ -94,7 +94,7 @@
 
   <!-- BTN CONTENT — 390×77 -->
   <div class="btn-content">
-    <button class="btn-primary" onclick="navigateTo('thank-you.html')">Done</button>
+    <button class="btn-primary" id="doneBtn">Done</button>
   </div>
 
   <div class="safe-bottom"></div>
@@ -117,6 +117,12 @@
   if (glb)  viewer.setAttribute('src', '../' + glb);
   if (usdz) viewer.setAttribute('ios-src', '../' + usdz);
   if (name) viewer.setAttribute('alt', name + ' — Didoo\'s Evergreen, in AR');
+
+  /* Done — return to the Indian menu, same category the dish was opened from */
+  var category = params.get('category') || 'mains';
+  document.getElementById('doneBtn').addEventListener('click', function () {
+    navigateTo('main-indian.html?category=' + encodeURIComponent(category));
+  });
 
   /* Hide loading overlay once the 3D model is ready */
   viewer.addEventListener('load', function () {
