@@ -156,6 +156,7 @@
   box-sizing: border-box;
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tab-bar::-webkit-scrollbar { display: none; }

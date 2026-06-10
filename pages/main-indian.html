@@ -99,6 +99,13 @@
     var row = document.createElement('div');
     row.className = 'food-item';
 
+    if (dish.available) {
+      row.classList.add('clickable');
+      row.addEventListener('click', function () {
+        navigateTo('ar-experience.html');
+      });
+    }
+
     var dot = document.createElement('span');
     dot.className = 'diet-dot ' + (dish.veg ? 'veg' : 'nonveg');
     row.appendChild(dot);
@@ -133,6 +140,7 @@
     stepperBtn.className = 'icon-stepper';
     stepperBtn.title = 'Add';
     stepperBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    stepperBtn.addEventListener('click', function (e) { e.stopPropagation(); });
     if (!dish.available) {
       stepperBtn.disabled = true;
       stepperBtn.style.opacity = '0.25';
@@ -144,6 +152,7 @@
     editBtn.className = 'icon-edit';
     editBtn.title = 'Edit / View';
     editBtn.innerHTML = '<img src="../assets/Menu Icons/edit-icon.svg" width="16" height="16" alt="edit" />';
+    editBtn.addEventListener('click', function (e) { e.stopPropagation(); });
     if (!dish.available) {
       editBtn.disabled = true;
       editBtn.style.opacity = '0.25';

@@ -168,6 +168,16 @@
   flex-shrink: 0;
 }
 
+.food-item.clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s;
+}
+
+.food-item.clickable:active {
+  background: rgba(200, 245, 106, 0.06);
+}
+
 /* ── DIETARY INDICATOR — 6×6 ─────────────────────────────── */
 
 .diet-dot {
