@@ -54,56 +54,7 @@
 
   <!-- 5. SCROLL AREA — 390×500 -->
   <div class="scroll-area" id="scrollArea">
-
-    <!-- Subheader -->
-    <div class="sub-header">
-      <span class="sub-header-label">HEALTHY</span>
-      <span class="sub-header-line"></span>
-    </div>
-
-    <!-- Food item — available -->
-    <div class="food-item">
-      <span class="diet-dot veg"></span>
-      <div class="dish-name-group">
-        <span class="dish-name">Healthy Yogurt</span>
-      </div>
-      <div class="dish-price-group">
-        <span class="dish-price">₹ 280</span>
-        <button class="icon-stepper" title="Add">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <button class="icon-edit" title="Edit / View">
-          <img src="../assets/Menu Icons/edit-icon.svg" width="16" height="16" alt="edit" />
-        </button>
-      </div>
-    </div>
-
-    <!-- Food item — sold out -->
-    <div class="food-item">
-      <span class="diet-dot veg"></span>
-      <div class="dish-name-group">
-        <span class="dish-name unavailable">Banana Honey Porridge</span>
-        <span class="sold-out-badge">Sold Out</span>
-      </div>
-      <div class="dish-price-group">
-        <span class="dish-price unavailable">₹ 200</span>
-        <button class="icon-stepper" title="Add" disabled style="opacity:0.25;pointer-events:none;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <button class="icon-edit" title="Edit / View" disabled style="opacity:0.25;pointer-events:none;">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M2 2.5C2 2.22 2.22 2 2.5 2H9.5L12 4.5V13.5C12 13.78 11.78 14 11.5 14H2.5C2.22 14 2 13.78 2 13.5V2.5Z" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"/>
-            <path d="M10.5 11L14 7.5L12.5 6L9 9.5V11H10.5Z" fill="rgba(255,255,255,0.55)"/>
-            <path d="M12.5 6L14 7.5" stroke="rgba(255,255,255,0.55)" stroke-width="0.8"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
+    <!-- dish content injected by JS from assets/menu.json -->
   </div>
 
   <!-- 6. BOTTOM BAR — 390×66 -->
@@ -117,25 +68,16 @@
 </div>
 <script src="../js/navigation.js"></script>
 <script>
-  /* ── Category → sub-tab map ──────────────────────────────── */
-  var TABS = {
-    breakfast: ['Healthy', 'Eggs', 'Toast', 'Big Breakfast'],
-    starters:  ['Salad', 'Soups', 'Appetisers', 'Loaded Fries'],
-    israeli:   ['Shakshuka', 'Hummus', 'Pita', 'Falafel'],
-    mains:     ['Curry', 'Rice', 'Biryani', 'Dal'],
-    bakes:     ['Pizza', 'Calzone', 'Flatbread', 'Puffs'],
-    drinks:    ['Hot', 'Cold', 'Smoothies', 'Juices'],
-    desserts:  ['Cakes', 'Ice Cream', 'Pastries', 'Waffles']
-  };
-
   /* ── Read ?category= from URL ────────────────────────────── */
   var params   = new URLSearchParams(window.location.search);
   var category = (params.get('category') || 'breakfast').toLowerCase();
-  var tabs     = TABS[category] || TABS['breakfast'];
 
   /* ── Render tabs ─────────────────────────────────────────── */
   var tabBar    = document.getElementById('tabBar');
+  var scrollArea = document.getElementById('scrollArea');
   var activeTab = 0;
+  var menuData  = null;
+  var tabs      = [];   // sub-tab labels — derived from menu.json[category] keys
 
   function renderTabs() {
     tabBar.innerHTML = '';
@@ -146,12 +88,108 @@
       btn.addEventListener('click', function () {
         activeTab = i;
         renderTabs();
+        renderDishes();
       });
       tabBar.appendChild(btn);
     });
   }
 
-  renderTabs();
+  /* ── Build a single food-item row ────────────────────────── */
+  function buildFoodItem(dish) {
+    var row = document.createElement('div');
+    row.className = 'food-item';
+
+    var dot = document.createElement('span');
+    dot.className = 'diet-dot ' + (dish.veg ? 'veg' : 'nonveg');
+    row.appendChild(dot);
+
+    var nameGroup = document.createElement('div');
+    nameGroup.className = 'dish-name-group';
+
+    var nameEl = document.createElement('span');
+    nameEl.className = 'dish-name' + (dish.available ? '' : ' unavailable');
+    nameEl.textContent = dish.name;
+    nameGroup.appendChild(nameEl);
+
+    if (!dish.available) {
+      var badge = document.createElement('span');
+      badge.className = 'sold-out-badge';
+      badge.textContent = 'Sold Out';
+      nameGroup.appendChild(badge);
+    }
+    row.appendChild(nameGroup);
+
+    var priceGroup = document.createElement('div');
+    priceGroup.className = 'dish-price-group';
+
+    var priceEl = document.createElement('span');
+    priceEl.className = 'dish-price' + (dish.available ? '' : ' unavailable');
+    priceEl.textContent = '₹ ' + dish.price;
+    priceGroup.appendChild(priceEl);
+
+    var disabledAttrs = dish.available ? '' : ' disabled style="opacity:0.25;pointer-events:none;"';
+
+    var stepperBtn = document.createElement('button');
+    stepperBtn.className = 'icon-stepper';
+    stepperBtn.title = 'Add';
+    stepperBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    if (!dish.available) {
+      stepperBtn.disabled = true;
+      stepperBtn.style.opacity = '0.25';
+      stepperBtn.style.pointerEvents = 'none';
+    }
+    priceGroup.appendChild(stepperBtn);
+
+    var editBtn = document.createElement('button');
+    editBtn.className = 'icon-edit';
+    editBtn.title = 'Edit / View';
+    editBtn.innerHTML = '<img src="../assets/Menu Icons/edit-icon.svg" width="16" height="16" alt="edit" />';
+    if (!dish.available) {
+      editBtn.disabled = true;
+      editBtn.style.opacity = '0.25';
+      editBtn.style.pointerEvents = 'none';
+    }
+    priceGroup.appendChild(editBtn);
+
+    row.appendChild(priceGroup);
+    return row;
+  }
+
+  /* ── Render dishes for the active sub-tab ────────────────── */
+  function renderDishes() {
+    scrollArea.innerHTML = '';
+
+    if (!menuData) return;
+
+    var subTabLabel = tabs[activeTab];
+    var dishes = (menuData[category] && menuData[category][subTabLabel]) || [];
+
+    var subHeader = document.createElement('div');
+    subHeader.className = 'sub-header';
+    subHeader.innerHTML =
+      '<span class="sub-header-label">' + subTabLabel.toUpperCase() + '</span>' +
+      '<span class="sub-header-line"></span>';
+    scrollArea.appendChild(subHeader);
+
+    dishes.forEach(function (dish) {
+      scrollArea.appendChild(buildFoodItem(dish));
+    });
+  }
+
+  /* ── Load menu.json, derive tabs from category object, render ── */
+  fetch('../assets/menu.json')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      menuData = data;
+      var categoryData = menuData[category] || {};
+      tabs = Object.keys(categoryData);
+      activeTab = 0;
+      renderTabs();
+      renderDishes();
+    })
+    .catch(function (err) {
+      console.error('Failed to load menu.json', err);
+    });
 </script>
 </body>
 </html>

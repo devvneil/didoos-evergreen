@@ -182,22 +182,25 @@
     ]
   },
   "mains": {
-    "Curry": [
-      { "id": "mn-c-1", "name": "Butter Chicken", "price": 380, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
+    "Indian": [
+      { "id": "mn-c-1", "name": "Dal Makhani", "price": 380, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
       { "id": "mn-c-2", "name": "Palak Paneer", "price": 320, "veg": true, "available": true, "glb": "", "image": "" }
     ],
-    "Rice": [
+    "Chinese": [
       { "id": "mn-r-1", "name": "Jeera Rice", "price": 160, "veg": true, "available": true, "glb": "", "image": "" },
       { "id": "mn-r-2", "name": "Coconut Rice", "price": 180, "veg": true, "available": false, "glb": "", "image": "" }
     ],
-    "Biryani": [
+    "BBQ": [
       { "id": "mn-b-1", "name": "Chicken Biryani", "price": 420, "veg": false, "available": true, "glb": "assets/models/dish.glb", "image": "" },
       { "id": "mn-b-2", "name": "Veg Biryani", "price": 320, "veg": true, "available": true, "glb": "", "image": "" }
     ],
-    "Dal": [
+    "Intercontinental": [
       { "id": "mn-d-1", "name": "Dal Makhani", "price": 280, "veg": true, "available": true, "glb": "", "image": "" },
       { "id": "mn-d-2", "name": "Dal Tadka", "price": 240, "veg": true, "available": false, "glb": "", "image": "" }
-    ]
+    ],
+    "Italian": [
+      ]
+    
   },
   "israeli": {
     "Shakshuka": [
