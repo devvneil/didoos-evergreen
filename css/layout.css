@@ -147,6 +147,7 @@
   width: 390px;
   height: 68px;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 8px;
   padding: var(--sp3) var(--sp4);
@@ -154,9 +155,10 @@
   border-bottom: 1px solid var(--ev-bg-border);
   flex-shrink: 0;
   box-sizing: border-box;
-  overflow-x: auto;
-  scrollbar-width: none;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .tab-bar::-webkit-scrollbar { display: none; }

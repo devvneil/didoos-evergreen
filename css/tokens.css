@@ -21,10 +21,12 @@
   --ev-white-dim:     rgba(255, 255, 255, 0.55);
 
   /* ── Dietary ── */
-  --ev-veg:             #5eff8a;
+  --ev-veg:             #5EFF8A;
   --ev-veg-bg:          rgba(94, 255, 138, 0.10);
-  --ev-nonveg:          #ff5050;
-  --ev-nonveg-bg:       rgba(255, 80, 80, 0.10);
+  --ev-nonveg:          #E8472A;
+  --ev-nonveg-bg:       rgba(232, 71, 42, 0.10);
+  --ev-vegan:           #B088FF;
+  --ev-vegan-bg:        rgba(176, 136, 255, 0.10);
 
   /* ── Dish Status ── */
   --ev-soldout:         #FFB830;

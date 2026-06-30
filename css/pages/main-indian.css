@@ -125,7 +125,6 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 104px;
   height: 34px;
   padding: var(--sp2) var(--sp4);         /* 8px 16px */
   box-sizing: border-box;
@@ -133,7 +132,6 @@
 }
 
 .sub-header-label {
-  width: 48px;
   height: 18px;
   font-family: var(--font-sans);
   font-size: 12px;
@@ -190,6 +188,7 @@
 
 .diet-dot.veg    { background: var(--ev-veg); }
 .diet-dot.nonveg { background: var(--ev-nonveg); }
+.diet-dot.vegan  { background: var(--ev-vegan); }
 
 /* ── DISH NAME + SOLD OUT BADGE — 212×21 ─────────────────── */
 
@@ -416,3 +415,105 @@
 
 .dish-ar-btn:active { opacity: 0.6; }
 .dish-row.sold-out .dish-ar-btn { opacity: 0.25; pointer-events: none; }
+
+
+/* ── BOTTOM BAR — checkout counter ──────────────────────── */
+
+/* ── DIET-TYPES badge (bottom bar) ───────────────────────── */
+
+.diet-types {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 34px;
+  padding: var(--sp1) var(--sp2);
+  border-radius: var(--ev-radius-xs);
+  border: 1px solid;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.diet-types.veg {
+  background: var(--ev-veg-bg);
+  border-color: var(--ev-veg);
+  color: var(--ev-veg);
+}
+
+.diet-types.nonveg {
+  background: var(--ev-nonveg-bg);
+  border-color: var(--ev-nonveg);
+  color: var(--ev-nonveg);
+}
+
+.diet-types.vegan {
+  background: var(--ev-vegan-bg);
+  border-color: var(--ev-vegan);
+  color: var(--ev-vegan);
+}
+
+.checkout-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 149px;
+  height: 34px;
+  padding: var(--sp2) var(--sp3);
+  border-radius: var(--ev-radius-full);
+  border: 1px solid var(--ev-lime);
+  background: var(--ev-bar-bg);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkout-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.checkout-items {
+  width: 41px;
+  height: 18px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: var(--ev-white);
+  white-space: nowrap;
+}
+
+.checkout-label {
+  width: 52px;
+  height: 18px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: var(--ev-white);
+  white-space: nowrap;
+}
+
+/* ── DISH NAME + SOLD OUT — wrap fix for long names ──────── */
+
+.dish-name-group {
+  height: auto !important;
+  min-height: 21px;
+  flex-wrap: wrap;
+  overflow: visible !important;
+}
+
+.food-item {
+  height: auto !important;
+  min-height: 53px;
+  align-items: center;
+}

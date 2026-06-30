@@ -29,7 +29,7 @@
     </button>
 
     <!-- Welcome logo — 97×31 -->
-    <img class="topbar-logo" src="../assets/Welcome Logo.svg" alt="Didoo's Evergreen" />
+    <img class="topbar-logo" src="../assets/Didoo's logo caps.svg" alt="Didoo's Evergreen" />
 
   </div>
 
@@ -58,8 +58,15 @@
   </div>
 
   <!-- 6. BOTTOM BAR — 390×66 -->
-  <div class="bottom-bar">
-    <!-- summary / CTA -->
+  <div class="bottom-bar" id="bottomBar">
+    <!-- single dietary badge — updated when + is tapped -->
+    <div class="diet-types" id="dietBadge" style="visibility:hidden;"></div>
+    <!-- checkout counter -->
+    <div class="checkout-counter" id="checkoutCounter">
+      <img src="../assets/list.png" width="16" height="16" alt="cart" class="checkout-icon" />
+      <span class="checkout-label">Checkout</span>
+      <span class="checkout-items" id="checkoutItems">0 Items</span>
+    </div>
   </div>
 
   <!-- 7. SAFE BOTTOM — 34px -->
@@ -68,6 +75,29 @@
 </div>
 <script src="../js/navigation.js"></script>
 <script>
+  /* ── Cart state ─────────────────────────────────────────── */
+  var cart = {}; // { dishId: { dish, quantity } }
+
+  function updateBottomBar(dish) {
+    var totalItems = 0;
+    Object.values(cart).forEach(function (e) { totalItems += e.quantity; });
+
+    var badge     = document.getElementById('dietBadge');
+    var itemsEl   = document.getElementById('checkoutItems');
+    var bottomBar = document.getElementById('bottomBar');
+
+    /* show dietary badge for the last tapped dish */
+    var dtype = dish.dietary || (dish.veg ? 'veg' : 'non-veg');
+    badge.className = 'diet-types ' + dtype.replace('-', '');
+    if (dtype === 'veg')     badge.textContent = 'Veg';
+    else if (dtype === 'vegan') badge.textContent = 'Vegan';
+    else                     badge.textContent = 'Non Veg';
+    badge.style.visibility = 'visible';
+
+    itemsEl.textContent = totalItems + (totalItems === 1 ? ' Item' : ' Items');
+    bottomBar.style.display = 'flex';
+  }
+
   /* ── Read ?category= from URL ────────────────────────────── */
   var params   = new URLSearchParams(window.location.search);
   var category = (params.get('category') || 'breakfast').toLowerCase();
@@ -112,7 +142,8 @@
     }
 
     var dot = document.createElement('span');
-    dot.className = 'diet-dot ' + (dish.veg ? 'veg' : 'nonveg');
+    var dtype = dish.dietary || (dish.veg ? 'veg' : 'non-veg');
+    dot.className = 'diet-dot ' + dtype.replace('-', '');
     row.appendChild(dot);
 
     var nameGroup = document.createElement('div');
@@ -145,7 +176,15 @@
     stepperBtn.className = 'icon-stepper';
     stepperBtn.title = 'Add';
     stepperBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M3 8H13" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round"/></svg>';
-    stepperBtn.addEventListener('click', function (e) { e.stopPropagation(); });
+    stepperBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (cart[dish.id]) {
+        cart[dish.id].quantity += 1;
+      } else {
+        cart[dish.id] = { dish: dish, quantity: 1 };
+      }
+      updateBottomBar(dish);
+    });
     if (!dish.available) {
       stepperBtn.disabled = true;
       stepperBtn.style.opacity = '0.25';
