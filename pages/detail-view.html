@@ -159,7 +159,7 @@
   viewer.addEventListener('load', hideLoading);
   viewer.addEventListener('error', hideLoading);
 
-  fetch('../assets/menu.json')
+  fetch('../assets/menu_final.json')
     .then(function (r) { return r.json(); })
     .then(function (data) {
       var categoryData = data[category] || {};
