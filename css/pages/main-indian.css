@@ -297,9 +297,8 @@
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--ev-white);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .dish-row.sold-out .dish-name,
