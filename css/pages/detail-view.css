@@ -3,41 +3,6 @@
    ============================================================ */
 
 
-/* ── TOP BAR ELEMENTS ────────────────────────────────────── */
-
-.topbar-logo {
-  width: 97px;
-  height: 31px;
-  flex-shrink: 0;
-  display: block;
-}
-
-.topbar-back {
-  width: 70px;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: var(--sp1) var(--sp3);
-  background: var(--ev-bar-bg);
-  border-radius: var(--ev-radius-full);
-  border: 1px solid var(--ev-lime);
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--ev-lime);
-  cursor: pointer;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  transition: opacity 0.15s ease-out;
-}
-
-.topbar-back:active { opacity: 0.7; }
-
-.topbar-back svg { flex-shrink: 0; }
-
 
 /* ── MEDIA FRAME — 390×219 ───────────────────────────────── */
 
@@ -227,17 +192,6 @@
 }
 
 /* Preference pill container — 358×166 */
-.preference-pill-section {
-  width: 358px;
-  height: 166px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-/* Preference pill section — 358×166 */
 .preference-pill-section {
   width: 358px;
   height: 166px;

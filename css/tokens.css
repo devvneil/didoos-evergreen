@@ -28,6 +28,10 @@
   --ev-vegan:           #B088FF;
   --ev-vegan-bg:        rgba(176, 136, 255, 0.10);
 
+  /* ── Accent ── */
+  --ev-orange:          #FF7C3E;
+  --ev-dark-text:       #0F1A0A;
+
   /* ── Dish Status ── */
   --ev-soldout:         #FFB830;
   --ev-soldout-bg:      rgba(255, 184, 48, 0.10);  /* #FFB8301A */

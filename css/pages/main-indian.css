@@ -3,45 +3,6 @@
    ============================================================ */
 
 
-/* ── TOP BAR ELEMENTS ────────────────────────────────────── */
-
-/* Welcome logo — 97×31 */
-.topbar-logo {
-  width: 97px;
-  height: 31px;
-  flex-shrink: 0;
-  display: block;
-}
-
-/* Back button — 70×26 */
-.topbar-back {
-  width: 70px;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: var(--sp1) var(--sp3);           /* 4px 12px */
-  background: var(--ev-bar-bg);             /* rgba(0,0,0,0.38) */
-  border-radius: var(--ev-radius-full);
-  border: 1px solid var(--ev-lime);         /* #C8F56A */
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--ev-lime);
-  cursor: pointer;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  transition: opacity 0.15s ease-out;
-}
-
-.topbar-back:active { opacity: 0.7; }
-
-.topbar-back svg {
-  flex-shrink: 0;
-}
-
 
 /* ── SEARCH BAR ──────────────────────────────────────────── */
 
