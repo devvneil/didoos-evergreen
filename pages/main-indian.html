@@ -63,7 +63,7 @@
     <!-- single dietary badge — updated when + is tapped -->
     <div class="diet-types" id="dietBadge" style="visibility:hidden;"></div>
     <!-- checkout counter -->
-    <div class="checkout-counter" id="checkoutCounter" onclick="navigateTo('checkout.html')" style="cursor:pointer;">
+    <div class="checkout-counter" id="checkoutCounter" onclick="goToCheckout()" style="cursor:pointer;">
       <img src="../assets/list.png" width="16" height="16" alt="cart" class="checkout-icon" />
       <span class="checkout-label">Checkout</span>
       <span class="checkout-items" id="checkoutItems">0 Items</span>
@@ -78,6 +78,14 @@
 <script>
   /* ── Cart state ─────────────────────────────────────────── */
   var cart = {}; // { dishId: { dish, quantity } }
+
+  function goToCheckout() {
+    var totalItems = 0;
+    Object.values(cart).forEach(function (e) { totalItems += e.quantity; });
+    if (totalItems === 0) return; // do nothing if cart is empty
+    localStorage.setItem('ev_cart', JSON.stringify(cart));
+    navigateTo('checkout.html');
+  }
 
   function updateBottomBar(dish) {
     var totalItems = 0;

@@ -31,41 +31,7 @@
   </div>
 
   <!-- ORDER LIST — 358×625 -->
-  <div class="order-list" id="orderList">
-    <!-- sample item — will be dynamic -->
-    <div class="list-item">
-      <div class="item-elements">
-        <div class="card-left">
-          <span class="co-dietary-indicator">
-            <span class="diet-indic veg"></span>
-          </span>
-          <div class="dish-name-col">
-            <span class="co-dish-name">Dal Makhani</span>
-          </div>
-        </div>
-        <div class="unit">
-          <div class="co-stepper">
-            <button class="co-stepper-btn" aria-label="Reduce">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8H13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-            <span class="co-stepper-units">1</span>
-            <button class="co-stepper-btn" aria-label="Add">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 3V13M3 8H13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-          <button class="co-delete-btn" aria-label="Remove item">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M2 4h12M5 4V2.5A.5.5 0 0 1 5.5 2h5a.5.5 0 0 1 .5.5V4M6 7v5M10 7v5M3 4l.8 9.2a.5.5 0 0 0 .5.8h7.4a.5.5 0 0 0 .5-.8L13 4" stroke="#FFFFFF61" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="order-list" id="orderList"></div>
 
   <!-- BUTTON SECTION — 358×85 -->
   <div class="co-button-section" id="buttonSection">
@@ -78,29 +44,81 @@
 </div>
 <script src="../js/navigation.js"></script>
 <script>
-  document.getElementById('orderList').addEventListener('click', function (e) {
+  var cart = JSON.parse(localStorage.getItem('ev_cart') || '{}');
+  var orderList = document.getElementById('orderList');
+
+  function dietClass(dish) {
+    var d = dish.dietary || (dish.veg ? 'veg' : 'non-veg');
+    return d.replace('-', '');
+  }
+
+  function buildItem(entry) {
+    var dish = entry.dish;
+    var qty  = entry.quantity;
+    var dc   = dietClass(dish);
+
+    var row = document.createElement('div');
+    row.className = 'list-item';
+    row.dataset.id = dish.id;
+    row.innerHTML =
+      '<div class="item-elements">' +
+        '<div class="card-left">' +
+          '<span class="co-dietary-indicator"><span class="diet-indic ' + dc + '"></span></span>' +
+          '<div class="dish-name-col"><span class="co-dish-name">' + dish.name + '</span></div>' +
+        '</div>' +
+        '<div class="unit">' +
+          '<div class="co-stepper">' +
+            '<button class="co-stepper-btn" aria-label="Reduce">' +
+              '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></svg>' +
+            '</button>' +
+            '<span class="co-stepper-units">' + qty + '</span>' +
+            '<button class="co-stepper-btn" aria-label="Add">' +
+              '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3V13M3 8H13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/></svg>' +
+            '</button>' +
+          '</div>' +
+          '<button class="co-delete-btn" aria-label="Remove item">' +
+            '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M5 4V2.5A.5.5 0 0 1 5.5 2h5a.5.5 0 0 1 .5.5V4M6 7v5M10 7v5M3 4l.8 9.2a.5.5 0 0 0 .5.8h7.4a.5.5 0 0 0 .5-.8L13 4" stroke="#FFFFFF61" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '</button>' +
+        '</div>' +
+      '</div>';
+    return row;
+  }
+
+  function renderCart() {
+    orderList.innerHTML = '';
+    Object.values(cart).forEach(function (entry) {
+      orderList.appendChild(buildItem(entry));
+    });
+  }
+
+  renderCart();
+
+  orderList.addEventListener('click', function (e) {
     var item = e.target.closest('.list-item');
     if (!item) return;
+    var id = item.dataset.id;
 
-    /* Delete */
     if (e.target.closest('.co-delete-btn')) {
+      delete cart[id];
+      localStorage.setItem('ev_cart', JSON.stringify(cart));
       item.remove();
       return;
     }
 
-    /* Reduce */
+    var unitsEl = item.querySelector('.co-stepper-units');
+    var qty = parseInt(unitsEl.textContent, 10);
+
     if (e.target.closest('.co-stepper-btn[aria-label="Reduce"]')) {
-      var unitsEl = item.querySelector('.co-stepper-units');
-      var qty = parseInt(unitsEl.textContent, 10);
-      if (qty > 1) unitsEl.textContent = qty - 1;
+      if (qty > 1) { cart[id].quantity = qty - 1; unitsEl.textContent = qty - 1; }
+      else { delete cart[id]; item.remove(); }
+      localStorage.setItem('ev_cart', JSON.stringify(cart));
       return;
     }
 
-    /* Add */
     if (e.target.closest('.co-stepper-btn[aria-label="Add"]')) {
-      var unitsEl = item.querySelector('.co-stepper-units');
-      var qty = parseInt(unitsEl.textContent, 10);
+      cart[id].quantity = qty + 1;
       unitsEl.textContent = qty + 1;
+      localStorage.setItem('ev_cart', JSON.stringify(cart));
       return;
     }
   });
