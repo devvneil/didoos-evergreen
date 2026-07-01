@@ -236,30 +236,23 @@
     if (!menuData) return;
 
     var q = query.trim().toLowerCase();
-    var categoryData = menuData[category] || {};
-    var hasResults = false;
+    var subTabLabel = tabs[activeTab];
+    var dishes = (menuData[category] && menuData[category][subTabLabel]) || [];
 
-    Object.keys(categoryData).forEach(function (subLabel) {
-      var matches = categoryData[subLabel].filter(function (dish) {
-        return dish.name.toLowerCase().includes(q) ||
-               (dish.description && dish.description.toLowerCase().includes(q));
-      });
-      if (!matches.length) return;
-      hasResults = true;
+    var matches = dishes.filter(function (dish) {
+      return dish.name.toLowerCase().includes(q) ||
+             (dish.description && dish.description.toLowerCase().includes(q));
+    });
 
+    if (matches.length) {
       var subHeader = document.createElement('div');
       subHeader.className = 'sub-header';
       subHeader.innerHTML =
-        '<span class="sub-header-label">' + subLabel.toUpperCase() + '</span>' +
+        '<span class="sub-header-label">' + subTabLabel.toUpperCase() + '</span>' +
         '<span class="sub-header-line"></span>';
       scrollArea.appendChild(subHeader);
-
-      matches.forEach(function (dish) {
-        scrollArea.appendChild(buildFoodItem(dish));
-      });
-    });
-
-    if (!hasResults) {
+      matches.forEach(function (dish) { scrollArea.appendChild(buildFoodItem(dish)); });
+    } else {
       var empty = document.createElement('div');
       empty.style.cssText = 'padding:32px 16px;text-align:center;color:var(--ev-white-dim);font-family:var(--font-sans);font-size:14px;';
       empty.textContent = 'No dishes found for "' + query.trim() + '"';
