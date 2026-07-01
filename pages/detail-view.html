@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Dish Detail — Didoo's Evergreen Café" />
+  <title>Detail View — Didoo's Evergreen</title>
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/pages/detail-view.css" />
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+<div class="shell">
+
+  <!-- 1. SAFE TOP — 44px -->
+  <div class="safe-top"></div>
+
+  <!-- 2. TOP BAR — 390×55 -->
+  <div class="top-bar">
+    <button class="topbar-back" onclick="navigateBack('main-indian.html')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M8.75 11.5L4.25 7L8.75 2.5" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back
+    </button>
+    <img class="topbar-logo" src="../assets/Didoo's logo caps.svg" alt="Didoo's Evergreen" />
+  </div>
+
+  <!-- 3. MEDIA FRAME — 390×219 -->
+  <div class="media-frame">
+    <div class="media-loading" id="mediaLoading">
+      <div class="media-spinner"></div>
+    </div>
+    <img id="mediaImage" class="media-image" alt="" />
+    <model-viewer
+      id="detailViewer"
+      src="../assets/models/dish.glb?v=2"
+      ios-src="../assets/models/dish.usdz"
+      alt="Dish 3D model"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-scale="fixed"
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="1500"
+      rotation-per-second="25deg"
+      shadow-intensity="1"
+      exposure="1.1"
+      environment-image="neutral"
+      style="width:100%;height:100%;background:transparent;"
+    >
+      <button class="ar-place-btn" slot="ar-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        Place on your table
+      </button>
+    </model-viewer>
+  </div>
+
+  <!-- 4. DETAIL AREA — 390×195 -->
+  <div class="detail-area">
+
+    <!-- Dark bar containing the dietary badge -->
+    <div class="detail-diet-bar">
+      <span class="detail-diet-badge" id="detailDietBadge"></span>
+    </div>
+
+    <!-- Dish name — from menu.json -->
+    <h1 class="detail-dish-name" id="detailName"></h1>
+
+    <!-- Description — from menu.json -->
+    <p class="detail-description" id="detailDescription"></p>
+
+    <!-- Price — from menu.json -->
+    <span class="detail-price" id="detailPrice"></span>
+
+  </div>
+
+  <!-- 5. BOTTOM FRAME — 390×297 -->
+  <div class="bottom-frame">
+
+    <!-- Preference pill section — 358×166 -->
+    <div class="preference-pill-section" id="preferencePills">
+
+      <!-- Spice Level — 358×56 -->
+      <div class="pref-section">
+        <span class="pref-label">SPICE LEVEL</span>
+        <div class="pref-modes" id="spiceModes">
+          <button class="pref-pill" data-spice="spicy">Spicy</button>
+          <button class="pref-pill" data-spice="medium">Medium</button>
+          <button class="pref-pill" data-spice="mild">Mild</button>
+        </div>
+      </div>
+
+      <!-- Dietary Preferences — 358×94 -->
+      <div class="pref-section">
+        <span class="pref-label pref-label--wide">DIETARY PREFERENCES</span>
+        <div class="pref-modes">
+          <button class="pref-pill pref-pill--auto" data-diet="lactose-free">Lactose free</button>
+          <button class="pref-pill pref-pill--auto" data-diet="gluten-free">Gluten free</button>
+          <button class="pref-pill pref-pill--auto" data-diet="nut-free">Nut free</button>
+          <button class="pref-pill pref-pill--auto" data-diet="egg-free">Egg free</button>
+        </div>
+        <div class="pref-modes pref-modes--scroll">
+          <button class="pref-pill pref-pill--auto" data-diet="soy-free">Soy free</button>
+          <button class="pref-pill pref-pill--auto" data-diet="no-onion">No onion</button>
+          <button class="pref-pill pref-pill--auto" data-diet="no-garlic">No garlic</button>
+          <button class="pref-pill pref-pill--auto" data-diet="less-oil">Less oil</button>
+          <button class="pref-pill pref-pill--auto" data-diet="extra-sauce">Extra sauce</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Add to Order button — 358×53 -->
+    <div class="add-to-basket-btn" id="addToBasketBtn">
+      <span class="basket-label">Add to Order</span>
+      <div class="basket-stepper">
+        <button class="stepper-btn" id="stepperReduce" aria-label="Reduce">
+          <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+            <path d="M4 8H14" stroke="rgba(0,0,0,0.75)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <span class="stepper-units" id="stepperUnits">1</span>
+        <button class="stepper-btn" id="stepperAdd" aria-label="Add">
+          <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+            <path d="M9 3V13M4 8H14" stroke="rgba(0,0,0,0.75)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 6. SAFE BOTTOM — 34px -->
+  <div class="safe-bottom"></div>
+
+</div>
+<script src="../js/navigation.js"></script>
+<script>
+  var params   = new URLSearchParams(window.location.search);
+  var dishId   = params.get('id');
+  var category = params.get('category') || 'mains';
+  var viewer   = document.getElementById('detailViewer');
+  var loading  = document.getElementById('mediaLoading');
+
+  function hideLoading() {
+    loading.style.display = 'none';
+  }
+
+  /* Attach listener immediately — before fetch — so we never miss the event */
+  viewer.addEventListener('load', hideLoading);
+  viewer.addEventListener('error', hideLoading);
+
+  fetch('../assets/menu.json')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var categoryData = data[category] || {};
+      var dish = null;
+      Object.values(categoryData).forEach(function (items) {
+        items.forEach(function (item) {
+          if (item.id === dishId) dish = item;
+        });
+      });
+      if (!dish) return;
+
+      document.getElementById('detailName').textContent        = dish.name;
+      document.getElementById('detailDescription').textContent = dish.description;
+      document.getElementById('detailPrice').textContent       = '₹ ' + dish.price;
+
+      var dtype = dish.dietary || (dish.veg ? 'veg' : 'non-veg');
+      var badge = document.getElementById('detailDietBadge');
+      badge.className = 'detail-diet-badge ' + dtype.replace('-', '');
+      if (dtype === 'veg')        badge.textContent = 'Veg';
+      else if (dtype === 'vegan') badge.textContent = 'Vegan';
+      else                        badge.textContent = 'Non Veg';
+
+      viewer.setAttribute('alt', dish.name + ' — 3D model');
+
+      /* Spice level — pre-select based on dish.spice_level */
+      var spiceMap = { 'mild': 'mild', 'medium': 'medium', 'hot': 'spicy', 'spicy': 'spicy' };
+      var defaultSpice = spiceMap[(dish.spice_level || '').toLowerCase()] || 'medium';
+      document.querySelectorAll('.pref-pill[data-spice]').forEach(function (btn) {
+        if (btn.dataset.spice === defaultSpice) btn.classList.add('selected');
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.pref-pill[data-spice]').forEach(function (b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+        });
+      });
+
+      /* Dietary preferences — multi-select toggle */
+      document.querySelectorAll('.pref-pill[data-diet]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('selected');
+        });
+      });
+
+      /* Stepper — quantity control */
+      var qty = 1;
+      var unitsEl = document.getElementById('stepperUnits');
+      document.getElementById('stepperAdd').addEventListener('click', function (e) {
+        e.stopPropagation();
+        qty += 1;
+        unitsEl.textContent = qty;
+      });
+      document.getElementById('stepperReduce').addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (qty > 1) { qty -= 1; unitsEl.textContent = qty; }
+      });
+
+      /* Add to Order — navigate to checkout */
+      document.getElementById('addToBasketBtn').addEventListener('click', function () {
+        navigateTo('checkout.html');
+      });
+
+      if (dish.glb) {
+        viewer.setAttribute('src', '../' + dish.glb);
+        if (dish.usdz) viewer.setAttribute('ios-src', '../' + dish.usdz);
+      } else {
+        /* No 3D model — hide viewer and spinner immediately */
+        viewer.style.display = 'none';
+        loading.style.display = 'none';
+        if (dish.image) {
+          var mediaImg = document.getElementById('mediaImage');
+          mediaImg.src = '../' + dish.image;
+          mediaImg.alt = dish.name;
+          mediaImg.style.display = 'block';
+        }
+      }
+    });
+</script>
+</body>
+</html>

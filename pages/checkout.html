@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Checkout — Didoo's Evergreen Café" />
+  <title>Checkout — Didoo's Evergreen</title>
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/pages/checkout.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- 1. SAFE TOP — 44px -->
+  <div class="safe-top"></div>
+
+  <!-- 2. TOP BAR — 390×55 -->
+  <div class="top-bar">
+    <button class="topbar-back" onclick="navigateBack('detail-view.html')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M8.75 11.5L4.25 7L8.75 2.5" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back
+    </button>
+    <span class="co-topbar-title">Your Order</span>
+    <img class="topbar-logo" src="../assets/Didoo's logo caps.svg" alt="Didoo's Evergreen" />
+  </div>
+
+  <!-- ORDER LIST — 358×625 -->
+  <div class="order-list" id="orderList">
+    <!-- sample item — will be dynamic -->
+    <div class="list-item">
+      <div class="item-elements">
+        <div class="card-left">
+          <span class="co-dietary-indicator">
+            <span class="diet-indic veg"></span>
+          </span>
+          <div class="dish-name-col">
+            <span class="co-dish-name">Dal Makhani</span>
+          </div>
+        </div>
+        <div class="unit">
+          <div class="co-stepper">
+            <button class="co-stepper-btn" aria-label="Reduce">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8H13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <span class="co-stepper-units">1</span>
+            <button class="co-stepper-btn" aria-label="Add">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3V13M3 8H13" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          <button class="co-delete-btn" aria-label="Remove item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 4h12M5 4V2.5A.5.5 0 0 1 5.5 2h5a.5.5 0 0 1 .5.5V4M6 7v5M10 7v5M3 4l.8 9.2a.5.5 0 0 0 .5.8h7.4a.5.5 0 0 0 .5-.8L13 4" stroke="#FFFFFF61" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUTTON SECTION — 358×85 -->
+  <div class="co-button-section" id="buttonSection">
+    <button class="co-place-order-btn" onclick="navigateTo('order-confirm.html')">Place Order</button>
+  </div>
+
+  <!-- 3. SAFE BOTTOM — 34px -->
+  <div class="safe-bottom"></div>
+
+</div>
+<script src="../js/navigation.js"></script>
+<script>
+  document.getElementById('orderList').addEventListener('click', function (e) {
+    var item = e.target.closest('.list-item');
+    if (!item) return;
+
+    /* Delete */
+    if (e.target.closest('.co-delete-btn')) {
+      item.remove();
+      return;
+    }
+
+    /* Reduce */
+    if (e.target.closest('.co-stepper-btn[aria-label="Reduce"]')) {
+      var unitsEl = item.querySelector('.co-stepper-units');
+      var qty = parseInt(unitsEl.textContent, 10);
+      if (qty > 1) unitsEl.textContent = qty - 1;
+      return;
+    }
+
+    /* Add */
+    if (e.target.closest('.co-stepper-btn[aria-label="Add"]')) {
+      var unitsEl = item.querySelector('.co-stepper-units');
+      var qty = parseInt(unitsEl.textContent, 10);
+      unitsEl.textContent = qty + 1;
+      return;
+    }
+  });
+</script>
+</body>
+</html>

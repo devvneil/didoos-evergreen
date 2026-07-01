@@ -1,192 +1,265 @@
 /* ============================================================
-   pages/checkout.css — Checkout / Order review screen
-   Figma: white-background variant with orange CTA
+   checkout.css — Checkout page styles
    ============================================================ */
 
 
-/* ── SHELL OVERRIDE — white background ────────────────────── */
+/* ── TOP BAR ELEMENTS ────────────────────────────────────── */
 
-.shell--checkout {
-  background: #ffffff;
-}
-
-
-/* ── TOP BAR (checkout variant) ───────────────────────────── */
-
-.checkout-top-bar {
-  height: 64px;
+.topbar-logo {
+  width: 97px;
+  height: 31px;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid #e8e8e8;
-}
-
-.checkout-back-btn {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 12px;
-  background: rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.20);
-  border-radius: 9999px;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: -0.48px;
-  color: #333;
-  cursor: pointer;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-  transition: opacity 0.15s;
-}
-
-.checkout-back-btn:active { opacity: 0.6; }
-
-.checkout-back-btn svg {
-  width: 16px;
-  height: 16px;
-  stroke: #333;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex-shrink: 0;
-}
-
-.checkout-title {
-  font-family: var(--font-sans);
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.72px;
-  color: var(--ev-lime);
-}
-
-.checkout-logo img {
-  width: 72px;
-  height: 28px;
   display: block;
 }
 
-
-/* ── ORDER ITEMS LIST ─────────────────────────────────────── */
-
-.checkout-list {
-  flex: 1 0 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  min-height: 0;
-}
-
-.checkout-list::-webkit-scrollbar { display: none; }
-
-.checkout-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.checkout-item-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.checkout-item-dot.veg    { background: #5EFF8A; }
-.checkout-item-dot.nonveg { background: #E8472A; }
-.checkout-item-dot.other  { background: #9B7FFF; }
-
-.checkout-item-info {
-  flex: 1 0 0;
-  min-width: 0;
-}
-
-.checkout-item-name {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.3px;
-  color: #1a1a1a;
-  line-height: 1.3;
-}
-
-.checkout-item-meta {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: -0.24px;
-  color: #888;
-  margin-top: 2px;
-}
-
-.checkout-item-price {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.3px;
-  color: #1a1a1a;
-  flex-shrink: 0;
-  margin-right: 8px;
-}
-
-.checkout-delete-btn {
-  width: 28px;
-  height: 28px;
+.topbar-back {
+  width: 70px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none;
-  border: none;
+  gap: 4px;
+  padding: var(--sp1) var(--sp3);
+  background: var(--ev-bar-bg);
+  border-radius: var(--ev-radius-full);
+  border: 1px solid var(--ev-lime);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ev-lime);
   cursor: pointer;
   flex-shrink: 0;
-  opacity: 0.4;
-  transition: opacity 0.15s;
-  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  transition: opacity 0.15s ease-out;
 }
 
-.checkout-delete-btn:active { opacity: 0.8; }
+.topbar-back:active { opacity: 0.7; }
+.topbar-back svg { flex-shrink: 0; }
 
-.checkout-delete-btn svg {
+/* "Your Order" title */
+.co-topbar-title {
+  width: 76px;
+  height: 21px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px;
+  letter-spacing: -0.04em;
+  text-align: right;
+  color: var(--ev-lime, #C8F56A);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* ── ORDER LIST — 358×625 ────────────────────────────────── */
+
+.order-list {
+  width: 358px;
+  height: 625px;
+  padding-top: var(--sp6);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* List item — 358×53 */
+.list-item {
+  width: 358px;
+  min-height: 53px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: var(--sp4);
+  padding-bottom: var(--sp4);
+  border-bottom: 1px solid var(--ev-bg-border, #2D4220);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Item elements row — 358×21 */
+.item-elements {
+  width: 358px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Card left — 260×21 */
+.card-left {
+  width: 260px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Dietary indicator container — 8×21 */
+.co-dietary-indicator {
+  width: 8px;
+  height: 21px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Dot — 6×6, top: 7px */
+.diet-indic {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 1px;
+}
+
+.diet-indic.veg    { background: var(--ev-veg); }
+.diet-indic.nonveg { background: var(--ev-nonveg); }
+.diet-indic.vegan  { background: var(--ev-vegan); }
+
+/* Dish name column — 244×21 */
+.dish-name-col {
+  width: 244px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.co-dish-name {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: var(--ev-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Unit — 90×16 */
+.unit {
+  width: 90px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Stepper — 64×16 */
+.co-stepper {
+  width: 64px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.co-stepper-btn {
   width: 16px;
   height: 16px;
-  stroke: #666;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-}
-
-
-/* ── CHECKOUT FOOTER ──────────────────────────────────────── */
-
-.checkout-footer {
-  flex-shrink: 0;
-  padding: 16px;
-  border-top: 1px solid #f0f0f0;
-  background: #fff;
-}
-
-.place-order-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 56px;
-  background: #f0784a;
+  background: transparent;
   border: none;
-  border-radius: var(--ev-radius-full);
-  font-family: var(--font-sans);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.68px;
-  color: #ffffff;
+  padding: 0;
   cursor: pointer;
+  flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
-  transition: opacity 0.15s;
 }
 
-.place-order-btn:active { opacity: 0.85; }
+.co-stepper-btn:focus,
+.co-stepper-btn:focus-visible { outline: none; }
+.co-stepper-btn:active { opacity: 0.6; }
+
+.co-stepper-units {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.04em;
+  color: var(--ev-white);
+  flex-shrink: 0;
+}
+
+/* Delete icon — 16×16 */
+.co-delete-btn {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.co-delete-btn:focus,
+.co-delete-btn:focus-visible { outline: none; }
+.co-delete-btn:active { opacity: 0.6; }
+
+
+/* ── BUTTON SECTION — 358×85 ─────────────────────────────── */
+
+.co-button-section {
+  width: 358px;
+  height: 85px;
+  padding-top: var(--sp4);
+  padding-bottom: var(--sp4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Place Order button — 358×53 */
+.co-place-order-btn {
+  width: 358px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: var(--sp4);
+  border-radius: var(--ev-radius-md);
+  border: none;
+  background: var(--ev-orange, #FF7C3E);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: opacity 0.15s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.co-place-order-btn:active { opacity: 0.85; }
