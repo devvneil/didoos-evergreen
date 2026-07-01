@@ -84,11 +84,39 @@
     return row;
   }
 
+  var placeBtn = document.querySelector('.co-place-order-btn');
+
+  function updateEmptyState() {
+    var isEmpty = Object.keys(cart).length === 0;
+
+    if (isEmpty) {
+      orderList.innerHTML =
+        '<div class="co-empty-state">' +
+          '<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+            '<circle cx="24" cy="24" r="23" stroke="#C8F56A26" stroke-width="1.5"/>' +
+            '<path d="M14 16h2.5l2.8 12h13.4l2.3-9H19" stroke="#C8F56A61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+            '<circle cx="22" cy="33" r="1.5" fill="#C8F56A61"/>' +
+            '<circle cx="31" cy="33" r="1.5" fill="#C8F56A61"/>' +
+          '</svg>' +
+          '<span class="co-empty-label">Your cart is empty</span>' +
+          '<span class="co-empty-sub">Go back and add some dishes</span>' +
+        '</div>';
+      placeBtn.disabled = true;
+      placeBtn.style.opacity = '0.35';
+      placeBtn.style.pointerEvents = 'none';
+    } else {
+      placeBtn.disabled = false;
+      placeBtn.style.opacity = '';
+      placeBtn.style.pointerEvents = '';
+    }
+  }
+
   function renderCart() {
     orderList.innerHTML = '';
     Object.values(cart).forEach(function (entry) {
       orderList.appendChild(buildItem(entry));
     });
+    updateEmptyState();
   }
 
   renderCart();
@@ -102,6 +130,7 @@
       delete cart[id];
       localStorage.setItem('ev_cart', JSON.stringify(cart));
       item.remove();
+      updateEmptyState();
       return;
     }
 
@@ -110,7 +139,7 @@
 
     if (e.target.closest('.co-stepper-btn[aria-label="Reduce"]')) {
       if (qty > 1) { cart[id].quantity = qty - 1; unitsEl.textContent = qty - 1; }
-      else { delete cart[id]; item.remove(); }
+      else { delete cart[id]; item.remove(); updateEmptyState(); }
       localStorage.setItem('ev_cart', JSON.stringify(cart));
       return;
     }
