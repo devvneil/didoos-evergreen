@@ -215,8 +215,15 @@
         if (qty > 1) { qty -= 1; unitsEl.textContent = qty; }
       });
 
-      /* Add to Order — navigate to checkout */
+      /* Add to Order — save to cart then navigate to checkout */
       document.getElementById('addToBasketBtn').addEventListener('click', function () {
+        var cart = JSON.parse(localStorage.getItem('ev_cart') || '{}');
+        if (cart[dish.id]) {
+          cart[dish.id].quantity += qty;
+        } else {
+          cart[dish.id] = { dish: dish, quantity: qty };
+        }
+        localStorage.setItem('ev_cart', JSON.stringify(cart));
         navigateTo('checkout.html');
       });
 
