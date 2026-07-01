@@ -228,6 +228,66 @@
     });
   }
 
+  /* ── Search ──────────────────────────────────────────────── */
+  var searchInput = document.querySelector('.search-input');
+
+  function renderSearch(query) {
+    scrollArea.innerHTML = '';
+    if (!menuData) return;
+
+    var q = query.trim().toLowerCase();
+    var categoryData = menuData[category] || {};
+    var hasResults = false;
+
+    Object.keys(categoryData).forEach(function (subLabel) {
+      var matches = categoryData[subLabel].filter(function (dish) {
+        return dish.name.toLowerCase().includes(q) ||
+               (dish.description && dish.description.toLowerCase().includes(q));
+      });
+      if (!matches.length) return;
+      hasResults = true;
+
+      var subHeader = document.createElement('div');
+      subHeader.className = 'sub-header';
+      subHeader.innerHTML =
+        '<span class="sub-header-label">' + subLabel.toUpperCase() + '</span>' +
+        '<span class="sub-header-line"></span>';
+      scrollArea.appendChild(subHeader);
+
+      matches.forEach(function (dish) {
+        scrollArea.appendChild(buildFoodItem(dish));
+      });
+    });
+
+    if (!hasResults) {
+      var empty = document.createElement('div');
+      empty.style.cssText = 'padding:32px 16px;text-align:center;color:var(--ev-white-dim);font-family:var(--font-sans);font-size:14px;';
+      empty.textContent = 'No dishes found for "' + query.trim() + '"';
+      scrollArea.appendChild(empty);
+    }
+  }
+
+  searchInput.addEventListener('input', function () {
+    var q = searchInput.value;
+    if (q.trim() === '') {
+      tabBar.style.display = '';
+      renderTabs();
+      renderDishes();
+    } else {
+      tabBar.style.display = 'none';
+      renderSearch(q);
+    }
+  });
+
+  /* restore tabs when input is cleared via × or keyboard */
+  searchInput.addEventListener('search', function () {
+    if (searchInput.value === '') {
+      tabBar.style.display = '';
+      renderTabs();
+      renderDishes();
+    }
+  });
+
   /* ── Load menu.json, derive tabs from category object, render ── */
   fetch('../assets/menu_final.json')
     .then(function (res) { return res.json(); })
