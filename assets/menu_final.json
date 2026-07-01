@@ -1,0 +1,1574 @@
+{
+  "breakfast": {
+    "Healthy": [
+      {
+        "id": "bf-h-1",
+        "name": "Healthy Yogurt",
+        "price": 280,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Fresh Greek yogurt topped with seasonal fruits, honey drizzle, and granola crunch.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-h-2",
+        "name": "Fruit Yogurt with Honey",
+        "price": 270,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Creamy yogurt layered with mixed fruits and a generous drizzle of organic honey.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-h-3",
+        "name": "Muesli Mixed Fruit",
+        "price": 290,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Swiss-style rolled oats soaked overnight with mixed fruits, nuts, and oat milk.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-h-4",
+        "name": "Banana Honey Porridge",
+        "price": 200,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Warm steel-cut oat porridge with sliced bananas, honey, and a sprinkle of cinnamon.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Eggs": [
+      {
+        "id": "bf-e-1",
+        "name": "Plain Omelette",
+        "price": 100,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic fluffy omelette prepared with fresh eggs.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-2",
+        "name": "Mushroom Cheese Omelette",
+        "price": 170,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Omelette stuffed with mushrooms and melted cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-3",
+        "name": "Potato Cheese Omelette",
+        "price": 190,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Egg omelette filled with seasoned potatoes and cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-4",
+        "name": "Fried or Scrambled Eggs",
+        "price": 100,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Choice of fried or scrambled eggs served fresh.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-5",
+        "name": "Masala Omelette",
+        "price": 150,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Indian-style masala omelette with onions, tomatoes and spices.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-6",
+        "name": "Masala Cheese Omelette",
+        "price": 170,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Masala omelette topped with melted cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-7",
+        "name": "Chilly Cheese Omelette",
+        "price": 150,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Cheese omelette with green chillies and herbs.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-e-8",
+        "name": "Feta Mushroom Omelette",
+        "price": 190,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Omelette with feta cheese and sautéed mushrooms.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Toast": [
+      {
+        "id": "bf-t-1",
+        "name": "Israeli Style Toast",
+        "price": 180,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Toasted sandwich inspired by Israeli café style.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-t-2",
+        "name": "Cheese Tomato Chilly Toast",
+        "price": 160,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Toast topped with cheese, tomato and chillies.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-t-3",
+        "name": "Masala Potato Cheese Toast",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Masala potato toast finished with melted cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-t-4",
+        "name": "French Toast with Honey",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Golden French toast served with honey.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-t-5",
+        "name": "Cheese Egg Toast",
+        "price": 200,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Toast topped with egg and melted cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-t-6",
+        "name": "Tofu Tomato Mushroom Olive Toast",
+        "price": 180,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Healthy toast with tofu, tomato, mushrooms and olives.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Big Breakfast": [
+      {
+        "id": "bf-bb-1",
+        "name": "American Breakfast",
+        "price": 330,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic American breakfast platter.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-2",
+        "name": "Mexican Breakfast",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Mexican-inspired hearty breakfast.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-3",
+        "name": "Israeli Veg. Breakfast",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Traditional Israeli vegetarian breakfast.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-4",
+        "name": "Israeli Breakfast",
+        "price": 300,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Traditional Israeli breakfast selection.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-5",
+        "name": "Spanish Breakfast",
+        "price": 300,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Spanish-style breakfast platter.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-6",
+        "name": "English Breakfast",
+        "price": 300,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic English breakfast with hearty sides.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bf-bb-7",
+        "name": "Evergreen Special Combo Breakfast",
+        "price": 470,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Signature Evergreen breakfast combo.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "starters": {
+    "Salad": [
+      {
+        "id": "st-s-1",
+        "name": "Israeli Salad with Green Pesto Chicken Steak",
+        "price": 400,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Israeli salad served with pesto chicken steak.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-s-2",
+        "name": "Israeli Salad with Tahina",
+        "price": 270,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Fresh Israeli salad with tahina dressing.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-s-3",
+        "name": "Green Salad with Avocado",
+        "price": 380,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Mixed greens with fresh avocado.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-s-4",
+        "name": "Greek Salad",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic Greek salad with feta and olives.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-s-5",
+        "name": "Vegetable Salad",
+        "price": 130,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Fresh seasonal vegetable salad.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-s-6",
+        "name": "Healthy Protein Salad",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Protein-rich healthy salad.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Soups": [
+      {
+        "id": "st-so-1",
+        "name": "Tofu Corn Soup",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Creamy tofu and corn soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-2",
+        "name": "Cream of Mushroom",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Creamy mushroom soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-3",
+        "name": "Cream of Chicken",
+        "price": 180,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Rich cream of chicken soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-4",
+        "name": "Veg Clear Soup",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Light vegetable clear soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-5",
+        "name": "Chicken Clear Soup",
+        "price": 180,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic chicken clear soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-6",
+        "name": "Hot N Sour Soup Veg",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Vegetarian hot and sour soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-7",
+        "name": "Hot N Sour Soup Chicken",
+        "price": 180,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Chicken hot and sour soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-8",
+        "name": "Manchow Soup Veg",
+        "price": 150,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Vegetarian Manchow soup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-so-9",
+        "name": "Manchow Soup Chicken",
+        "price": 180,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Chicken Manchow soup.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Appetisers": [
+      {
+        "id": "st-a-1",
+        "name": "French Fries",
+        "price": 120,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic crispy French fries.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-a-2",
+        "name": "Masala French Fries",
+        "price": 180,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "French fries tossed in Indian masala.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Loaded Fries": [
+      {
+        "id": "st-lf-1",
+        "name": "Honey Chilly Potato",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Honey chilli glazed potatoes.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-lf-2",
+        "name": "Cheese Fries",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "French fries topped with cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-lf-3",
+        "name": "Fries with Cheese & Jalapeno",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Cheesy fries with jalapeños.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-lf-4",
+        "name": "Fries with Corn Cheese",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Loaded fries with corn and cheese.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-lf-5",
+        "name": "Fries with Lamb Cheese Jalapeno",
+        "price": 400,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Loaded fries with lamb, cheese and jalapeños.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "st-lf-6",
+        "name": "Mashed Potatoes",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Creamy mashed potatoes.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "mains": {
+    "Indian": [
+      {
+        "id": "mn-in-1",
+        "name": "Dal Makhani",
+        "price": 380,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Slow-cooked black lentils simmered overnight in a rich tomato-butter-cream sauce. A north Indian classic.",
+        "glb": "assets/models/dish.glb?v=2",
+        "image": ""
+      },
+      {
+        "id": "mn-in-2",
+        "name": "Palak Paneer",
+        "price": 320,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Soft cottage cheese cubes in a vibrant spinach gravy spiced with garam masala and fresh ginger.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-3",
+        "name": "Butter Chicken",
+        "price": 420,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Tender chicken pieces in a creamy tomato-based sauce with butter, cream, and aromatic spices.",
+        "glb": "",
+        "image": "assets/Food Images/Dal Makhani.svg"
+      },
+      {
+        "id": "mn-in-4",
+        "name": "Paneer Tikka Masala",
+        "price": 350,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Chargrilled paneer in a bold, smoky tomato-onion masala with fenugreek leaves.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-5",
+        "name": "Chicken Karahi",
+        "price": 440,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Wok-cooked chicken with tomatoes, green chillies, ginger, and freshly ground black pepper.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-6",
+        "name": "Mutton Rogan Josh",
+        "price": 520,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Kashmiri-style slow-braised mutton in a deep red sauce of whole spices and Kashmiri chillies.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-7",
+        "name": "Chana Masala",
+        "price": 280,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Hearty chickpeas cooked in a tangy tomato-onion gravy with amchur, cumin, and coriander.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-8",
+        "name": "Aloo Gobi",
+        "price": 260,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Dry-style potatoes and cauliflower tossed with turmeric, cumin seeds, and fresh coriander.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-9",
+        "name": "Kadai Paneer",
+        "price": 340,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "spicy",
+        "description": "Paneer and bell peppers in a robust kadai spice blend with whole coriander and chillies.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-10",
+        "name": "Lamb Saag",
+        "price": 480,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Tender slow-cooked lamb simmered in a silky spinach gravy with garlic and garam masala.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-11",
+        "name": "Matar Paneer",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Green peas and paneer in a lightly spiced tomato-cream gravy with a hint of cardamom.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-in-12",
+        "name": "Dal Tadka",
+        "price": 240,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Yellow lentils tempered with mustard seeds, dried red chilli, garlic, and fresh coriander.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Chinese": [
+      {
+        "id": "mn-cn-1",
+        "name": "Veg Hakka Noodles",
+        "price": 220,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Stir-fried Hakka noodles with crunchy vegetables in soy and sesame sauce.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-cn-2",
+        "name": "Chicken Fried Rice",
+        "price": 280,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Wok-tossed rice with shredded chicken, egg, spring onions, and oyster sauce.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-cn-3",
+        "name": "Kung Pao Tofu",
+        "price": 260,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Crispy tofu with roasted peanuts, dried chillies, and a tangy soy-vinegar glaze.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-cn-4",
+        "name": "Schezwan Paneer",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Paneer cubes tossed in a fiery Schezwan sauce with onions and capsicum.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-cn-5",
+        "name": "Sweet and Sour Chicken",
+        "price": 320,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Battered chicken in a glossy sweet-sour pineapple sauce with bell peppers.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-cn-6",
+        "name": "Mushroom Fried Rice",
+        "price": 240,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Aromatic fried rice with shiitake mushrooms, edamame, and a drizzle of sesame oil.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "BBQ": [
+      {
+        "id": "mn-bbq-1",
+        "name": "Chicken Biryani",
+        "price": 420,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Fragrant basmati layered with spiced chicken, fried onions, saffron, and fresh mint. Dum-cooked.",
+        "glb": "assets/models/dish.glb?v=2",
+        "image": ""
+      },
+      {
+        "id": "mn-bbq-2",
+        "name": "Veg Biryani",
+        "price": 320,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Aromatic basmati with seasonal vegetables, whole spices, and caramelised onions.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-bbq-3",
+        "name": "Smoky BBQ Ribs",
+        "price": 680,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Slow-smoked pork ribs slathered in house BBQ sauce with a tangy apple-cider glaze.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-bbq-4",
+        "name": "Tandoori Chicken",
+        "price": 380,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Bone-in chicken marinated in yogurt and tandoori spices, charred in a clay oven.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-bbq-5",
+        "name": "Grilled Corn on the Cob",
+        "price": 140,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Sweet corn grilled over charcoal, brushed with lime butter and sprinkled with chaat masala.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Intercontinental": [
+      {
+        "id": "mn-ic-1",
+        "name": "Mushroom Risotto",
+        "price": 380,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Creamy arborio rice with wild mushrooms, parmesan, white wine, and fresh thyme.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-ic-2",
+        "name": "Grilled Salmon",
+        "price": 580,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Atlantic salmon fillet grilled with lemon-herb butter, served with roasted asparagus.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-ic-3",
+        "name": "Thai Green Curry",
+        "price": 340,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Fragrant green curry with coconut milk, Thai basil, tofu, and seasonal vegetables.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-ic-4",
+        "name": "Beef Stroganoff",
+        "price": 520,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Sauteed beef strips in a rich sour cream and mushroom sauce, served over egg noodles.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-ic-5",
+        "name": "Shakshuka",
+        "price": 280,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Poached eggs in a spiced tomato-pepper sauce with feta crumbles and fresh herbs.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Italian": [
+      {
+        "id": "mn-it-1",
+        "name": "Penne Arrabbiata",
+        "price": 300,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "spicy",
+        "description": "Penne tossed in a fiery tomato sauce with garlic, red chilli flakes, and fresh basil.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-it-2",
+        "name": "Spaghetti Carbonara",
+        "price": 360,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic Roman pasta with egg yolk, guanciale, pecorino romano, and black pepper.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-it-3",
+        "name": "Margherita Pizza",
+        "price": 320,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Thin sourdough base with San Marzano tomatoes, buffalo mozzarella, and fresh basil.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-it-4",
+        "name": "Pesto Gnocchi",
+        "price": 340,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Pillowy potato gnocchi tossed in house-made basil pesto with toasted pine nuts.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-it-5",
+        "name": "Chicken Parmigiana",
+        "price": 420,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Crumbed chicken breast topped with napolitana sauce and melted mozzarella, baked golden.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "mn-it-6",
+        "name": "Mushroom Linguine",
+        "price": 320,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Linguine with mixed wild mushrooms, garlic, white wine, parmesan, and fresh parsley.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "israeli": {
+    "Platters": [
+      {
+        "id": "is-pl-1",
+        "name": "Israeli Veg Platter",
+        "price": 550,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Traditional vegetarian Israeli platter.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-pl-2",
+        "name": "Special Hummus Mix Plate",
+        "price": 450,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Mixed hummus platter with accompaniments.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-pl-3",
+        "name": "Evergreen Special Platter",
+        "price": 670,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Signature Evergreen platter.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-pl-4",
+        "name": "Israeli Fried Non-Veg Platter",
+        "price": 670,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Israeli fried non-vegetarian platter.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-pl-5",
+        "name": "Combo Crispy Chicken Platter",
+        "price": 700,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Crispy chicken combo platter.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Mains": [
+      {
+        "id": "is-m-1",
+        "name": "Falafel",
+        "price": 400,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic crispy falafel.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-m-2",
+        "name": "Schnitzel",
+        "price": 410,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Golden fried schnitzel.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-m-3",
+        "name": "Sum-Sum Schnitzelonim",
+        "price": 430,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Israeli schnitzel variation.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-m-4",
+        "name": "Shakshuka",
+        "price": 350,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Eggs poached in tomato sauce.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-m-5",
+        "name": "Lamb Israeli Style",
+        "price": 700,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Israeli-style lamb preparation.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-m-6",
+        "name": "Tofu Schnitzel",
+        "price": 400,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Crispy tofu schnitzel.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-m-7",
+        "name": "Jerusalem Mix",
+        "price": 600,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Traditional Jerusalem mixed meat dish.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Hummus": [
+      {
+        "id": "is-h-1",
+        "name": "Plain Hummus Naan",
+        "price": 180,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Plain hummus served with naan.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-h-2",
+        "name": "Pesto Hummus Naan",
+        "price": 230,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Pesto hummus served with naan.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-h-3",
+        "name": "Pesto Hummus with Lamb & Naan",
+        "price": 400,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Pesto hummus with lamb and naan.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-h-4",
+        "name": "Hummus with Mushroom Onion & Naan",
+        "price": 280,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Hummus with mushrooms, onions and naan.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-h-5",
+        "name": "Hummus with Chicken Sausages",
+        "price": 320,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Hummus topped with chicken sausages.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-h-6",
+        "name": "Hummus with Lamb Ball",
+        "price": 450,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Hummus served with lamb meatballs.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "is-h-7",
+        "name": "Hummus with Chicken Sipodium",
+        "price": 400,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Hummus with chicken sipodium.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Dips": [
+      {
+        "id": "is-d-1",
+        "name": "Baba Ganoush",
+        "price": 350,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Smoky roasted eggplant dip.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "bakes": {
+    "Pizza": [
+      {
+        "id": "bk-p-1",
+        "name": "Margherita",
+        "price": 360,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Thin-crust pizza with San Marzano tomato sauce, buffalo mozzarella, and fresh basil leaves.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bk-p-2",
+        "name": "BBQ Chicken",
+        "price": 420,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Smoky BBQ base, pulled chicken, caramelised onions, jalapeños, and mozzarella cheese.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Calzone": [
+      {
+        "id": "bk-c-1",
+        "name": "Spinach Calzone",
+        "price": 340,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Folded pizza pocket stuffed with creamy spinach, ricotta, and sun-dried tomatoes.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Flatbread": [
+      {
+        "id": "bk-f-1",
+        "name": "Herb Flatbread",
+        "price": 220,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Stone-baked flatbread brushed with garlic butter, rosemary, and topped with sea salt flakes.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bk-f-2",
+        "name": "Cheese Flatbread",
+        "price": 260,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Crispy flatbread loaded with three-cheese blend — mozzarella, cheddar, and gouda.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Puffs": [
+      {
+        "id": "bk-pu-1",
+        "name": "Veg Puff",
+        "price": 120,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Flaky puff pastry filled with spiced potato and peas masala. Best enjoyed warm.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "bk-pu-2",
+        "name": "Chicken Puff",
+        "price": 140,
+        "veg": false,
+        "dietary": "non-veg",
+        "available": true,
+        "spice_level": "medium",
+        "description": "Golden puff pastry filled with minced chicken, onions, and aromatic spices.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "drinks": {
+    "Hot": [
+      {
+        "id": "dr-h-1",
+        "name": "Filter Coffee",
+        "price": 80,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "South Indian filter coffee brewed in a traditional brass filter, served with frothed milk.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "dr-h-2",
+        "name": "Masala Chai",
+        "price": 70,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Aromatic tea brewed with ginger, cardamom, cinnamon, and cloves in whole milk.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Cold": [
+      {
+        "id": "dr-c-1",
+        "name": "Cold Brew",
+        "price": 180,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Coffee steeped for 18 hours in cold water for a smooth, low-acid concentrate. Served over ice.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "dr-c-2",
+        "name": "Iced Matcha Latte",
+        "price": 200,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Ceremonial-grade matcha whisked with oat milk and lightly sweetened, served over ice.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Smoothies": [
+      {
+        "id": "dr-s-1",
+        "name": "Mango Smoothie",
+        "price": 180,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Thick Alphonso mango puree blended with coconut milk and a hint of cardamom.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "dr-s-2",
+        "name": "Berry Blast",
+        "price": 200,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Mixed berries — strawberry, blueberry, raspberry — blended with banana and almond milk.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Juices": [
+      {
+        "id": "dr-j-1",
+        "name": "Fresh Orange Juice",
+        "price": 140,
+        "veg": true,
+        "dietary": "vegan",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Freshly squeezed seasonal oranges, served chilled. No added sugar.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "dr-j-2",
+        "name": "Watermelon Juice",
+        "price": 130,
+        "veg": true,
+        "dietary": "vegan",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Cold-pressed watermelon juice with a squeeze of lime and a pinch of black salt.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  },
+  "desserts": {
+    "Cakes": [
+      {
+        "id": "ds-c-1",
+        "name": "Chocolate Lava Cake",
+        "price": 280,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Warm dark chocolate cake with a gooey molten centre. Served with a scoop of vanilla ice cream.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "ds-c-2",
+        "name": "Carrot Cake",
+        "price": 240,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Moist spiced carrot cake layered with cream cheese frosting and topped with candied walnuts.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Ice Cream": [
+      {
+        "id": "ds-i-1",
+        "name": "Vanilla Bean",
+        "price": 160,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Two scoops of premium vanilla bean ice cream made with Madagascar vanilla pods.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "ds-i-2",
+        "name": "Kulfi",
+        "price": 140,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Traditional Indian ice cream made with reduced milk, cardamom, saffron, and pistachios.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Pastries": [
+      {
+        "id": "ds-p-1",
+        "name": "Croissant",
+        "price": 180,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Buttery, flaky all-butter croissant baked fresh every morning. Best had warm.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "ds-p-2",
+        "name": "Pain au Chocolat",
+        "price": 200,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Classic French pastry with two dark chocolate batons encased in crisp buttered puff pastry.",
+        "glb": "",
+        "image": ""
+      }
+    ],
+    "Waffles": [
+      {
+        "id": "ds-w-1",
+        "name": "Classic Waffles",
+        "price": 260,
+        "veg": true,
+        "dietary": "veg",
+        "available": true,
+        "spice_level": "mild",
+        "description": "Belgian waffles served with whipped cream, seasonal berries, and warm maple syrup.",
+        "glb": "",
+        "image": ""
+      },
+      {
+        "id": "ds-w-2",
+        "name": "Nutella Waffles",
+        "price": 300,
+        "veg": true,
+        "dietary": "veg",
+        "available": false,
+        "spice_level": "mild",
+        "description": "Crispy waffles generously spread with Nutella, topped with banana slices and crushed hazelnuts.",
+        "glb": "",
+        "image": ""
+      }
+    ]
+  }
+}
