@@ -59,9 +59,9 @@
 /* Item elements row — 358×21 */
 .item-elements {
   width: 358px;
-  height: 21px;
+  min-height: 21px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   flex-shrink: 0;
 }
@@ -69,9 +69,9 @@
 /* Card left — 260×21 */
 .card-left {
   width: 260px;
-  height: 21px;
+  min-height: 21px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   flex-shrink: 0;
 }
@@ -101,12 +101,11 @@
 /* Dish name column — 244×21 */
 .dish-name-col {
   width: 244px;
-  height: 21px;
+  min-height: 21px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   flex-shrink: 0;
-  overflow: hidden;
 }
 
 .co-dish-name {
@@ -116,9 +115,8 @@
   line-height: 21px;
   letter-spacing: -0.02em;
   color: var(--ev-white);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Unit — 90×16 */
@@ -130,6 +128,8 @@
   gap: 10px;
   flex-shrink: 0;
   margin-left: auto;
+  align-self: flex-start;
+  margin-top: 2px;
 }
 
 /* Stepper — 64×16 */
