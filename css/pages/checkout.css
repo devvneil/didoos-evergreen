@@ -37,6 +37,13 @@
 .topbar-back:active { opacity: 0.7; }
 .topbar-back svg { flex-shrink: 0; }
 
+/* Checkout top-bar override — 358×56 */
+.top-bar {
+  width: 358px;
+  height: 56px;
+  align-self: center;
+}
+
 /* "Your Order" title */
 .co-topbar-title {
   width: 76px;
@@ -235,6 +242,7 @@
   align-self: center;
   flex-shrink: 0;
   box-sizing: border-box;
+  margin-top: auto;
 }
 
 /* Place Order button — 358×53 */

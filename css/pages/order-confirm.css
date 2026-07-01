@@ -10,11 +10,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 216px;
   padding-right: var(--sp4);
   padding-left: var(--sp4);
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 0;
   flex-shrink: 0;
   box-sizing: border-box;
   background: var(--ev-bg-app);
@@ -54,30 +53,34 @@
 /* Button section */
 .oc-button-section {
   width: 358px;
-  height: 53px;
+  height: 85px;
+  padding-top: var(--sp4);
+  padding-bottom: var(--sp4);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
-/* Button — 358×53, orange */
+/* Button — 358×53, lime */
 .oc-place-btn {
   width: 358px;
   height: 53px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 32px;
   padding: var(--sp4);
   border-radius: var(--ev-radius-md);
   border: none;
-  background: var(--ev-orange, #FF7C3E);
+  background: var(--ev-lime, #C8F56A);
   font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 600;
   line-height: 20.8px;
   letter-spacing: -0.04em;
-  color: #FFFFFF;
+  color: #0F1A0A;
   cursor: pointer;
   flex-shrink: 0;
   box-sizing: border-box;
