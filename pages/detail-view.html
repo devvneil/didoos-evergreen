@@ -21,7 +21,7 @@
 
   <!-- 2. TOP BAR — 390×55 -->
   <div class="top-bar">
-    <button class="topbar-back" onclick="navigateBack('main-indian.html')">
+    <button class="topbar-back" id="detailBackBtn">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path d="M8.75 11.5L4.25 7L8.75 2.5" stroke="#C8F56A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -144,104 +144,7 @@
 
 </div>
 <script src="../js/navigation.js"></script>
-<script>
-  var params   = new URLSearchParams(window.location.search);
-  var dishId   = params.get('id');
-  var category = params.get('category') || 'mains';
-  var viewer   = document.getElementById('detailViewer');
-  var loading  = document.getElementById('mediaLoading');
-
-  function hideLoading() {
-    loading.style.display = 'none';
-  }
-
-  /* Attach listener immediately — before fetch — so we never miss the event */
-  viewer.addEventListener('load', hideLoading);
-  viewer.addEventListener('error', hideLoading);
-
-  fetch('../assets/menu_final.json')
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      var categoryData = data[category] || {};
-      var dish = null;
-      Object.values(categoryData).forEach(function (items) {
-        items.forEach(function (item) {
-          if (item.id === dishId) dish = item;
-        });
-      });
-      if (!dish) return;
-
-      document.getElementById('detailName').textContent        = dish.name;
-      document.getElementById('detailDescription').textContent = dish.description;
-      document.getElementById('detailPrice').textContent       = '₹ ' + dish.price;
-
-      var dtype = dish.dietary || (dish.veg ? 'veg' : 'non-veg');
-      var badge = document.getElementById('detailDietBadge');
-      badge.className = 'detail-diet-badge ' + dtype.replace('-', '');
-      if (dtype === 'veg')        badge.textContent = 'Veg';
-      else if (dtype === 'vegan') badge.textContent = 'Vegan';
-      else                        badge.textContent = 'Non Veg';
-
-      viewer.setAttribute('alt', dish.name + ' — 3D model');
-
-      /* Spice level — pre-select based on dish.spice_level */
-      var spiceMap = { 'mild': 'mild', 'medium': 'medium', 'hot': 'spicy', 'spicy': 'spicy' };
-      var defaultSpice = spiceMap[(dish.spice_level || '').toLowerCase()] || 'medium';
-      document.querySelectorAll('.pref-pill[data-spice]').forEach(function (btn) {
-        if (btn.dataset.spice === defaultSpice) btn.classList.add('selected');
-        btn.addEventListener('click', function () {
-          document.querySelectorAll('.pref-pill[data-spice]').forEach(function (b) { b.classList.remove('selected'); });
-          btn.classList.add('selected');
-        });
-      });
-
-      /* Dietary preferences — multi-select toggle */
-      document.querySelectorAll('.pref-pill[data-diet]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          btn.classList.toggle('selected');
-        });
-      });
-
-      /* Stepper — quantity control */
-      var qty = 1;
-      var unitsEl = document.getElementById('stepperUnits');
-      document.getElementById('stepperAdd').addEventListener('click', function (e) {
-        e.stopPropagation();
-        qty += 1;
-        unitsEl.textContent = qty;
-      });
-      document.getElementById('stepperReduce').addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (qty > 1) { qty -= 1; unitsEl.textContent = qty; }
-      });
-
-      /* Add to Order — save to cart then navigate to checkout */
-      document.getElementById('addToBasketBtn').addEventListener('click', function () {
-        var cart = JSON.parse(localStorage.getItem('ev_cart') || '{}');
-        if (cart[dish.id]) {
-          cart[dish.id].quantity += qty;
-        } else {
-          cart[dish.id] = { dish: dish, quantity: qty };
-        }
-        localStorage.setItem('ev_cart', JSON.stringify(cart));
-        navigateTo('checkout.html');
-      });
-
-      if (dish.glb) {
-        viewer.setAttribute('src', '../' + dish.glb);
-        if (dish.usdz) viewer.setAttribute('ios-src', '../' + dish.usdz);
-      } else {
-        /* No 3D model — hide viewer and spinner immediately */
-        viewer.style.display = 'none';
-        loading.style.display = 'none';
-        if (dish.image) {
-          var mediaImg = document.getElementById('mediaImage');
-          mediaImg.src = '../' + dish.image;
-          mediaImg.alt = dish.name;
-          mediaImg.style.display = 'block';
-        }
-      }
-    });
-</script>
+<script src="../js/utils.js"></script>
+<script src="../js/pages/detail.js"></script>
 </body>
 </html>

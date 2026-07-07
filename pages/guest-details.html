@@ -28,7 +28,7 @@
     <!-- Full Name -->
     <div class="name-section input-section">
       <label class="input-label">Full Name</label>
-      <input class="input-field" type="text" placeholder="Enter your full name" />
+      <input class="input-field" id="nameInput" type="text" placeholder="Enter your full name" />
     </div>
 
     <!-- Mobile Number -->
@@ -61,88 +61,13 @@
 
   <!-- BTN CONTENT — 390×77 -->
   <div class="btn-content">
-    <button class="btn-primary" onclick="navigateTo('main-menu.html')">Submit</button>
+    <button class="btn-primary" id="submitBtn" onclick="submitGuest()">Submit</button>
   </div>
 
   <div class="safe-bottom"></div>
 
 </div>
 <script src="../js/navigation.js"></script>
-<script>
-  var dropdown = document.getElementById('countryDropdown');
-  var countryValue = document.getElementById('countryValue');
-  var countryList = document.getElementById('countryList');
-  var mobileInput = document.querySelector('.mobile-number');
-
-  function setMaxLength(maxLength) {
-    mobileInput.maxLength = maxLength;
-    mobileInput.placeholder = 'Enter ' + maxLength + '-digit number';
-  }
-
-  fetch('../assets/countries.json')
-    .then(function(res) { return res.json(); })
-    .then(function(countries) {
-      countries.forEach(function(country) {
-        var li = document.createElement('li');
-        li.textContent = country.code + '  ' + country.name;
-        li.dataset.code = country.code;
-        li.dataset.maxLength = country.maxLength;
-        if (country.name === 'India') {
-          li.classList.add('active');
-          setMaxLength(country.maxLength);
-        }
-        li.addEventListener('click', function() {
-          countryValue.textContent = country.code;
-          countryList.querySelectorAll('li').forEach(function(el) { el.classList.remove('active'); });
-          li.classList.add('active');
-          dropdown.classList.remove('open');
-          setMaxLength(country.maxLength);
-          mobileInput.value = '';
-          mobileInput.focus();
-        });
-        countryList.appendChild(li);
-      });
-    });
-
-  /* Allow digits only */
-  mobileInput.addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, '');
-  });
-
-  /* Email format validation */
-  var emailInput = document.getElementById('emailInput');
-  var emailError = document.getElementById('emailError');
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  emailInput.addEventListener('input', function() {
-    if (this.value.length === 0) {
-      emailError.style.display = 'none';
-      emailInput.classList.remove('input-error');
-    } else if (!emailRegex.test(this.value)) {
-      emailError.style.display = 'block';
-      emailInput.classList.add('input-error');
-    } else {
-      emailError.style.display = 'none';
-      emailInput.classList.remove('input-error');
-    }
-  });
-
-  document.getElementById('countrySelected').addEventListener('click', function(e) {
-    e.stopPropagation();
-    dropdown.classList.toggle('open');
-  });
-
-  document.addEventListener('click', function() {
-    dropdown.classList.remove('open');
-  });
-</script>
-<script>
-  function navigateTo(page) {
-    document.querySelector('.shell').style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
-    document.querySelector('.shell').style.transform = 'translateX(-100%)';
-    document.querySelector('.shell').style.opacity = '0';
-    setTimeout(function () { window.location.href = page; }, 300);
-  }
-</script>
+<script src="../js/pages/guest.js"></script>
 </body>
 </html>

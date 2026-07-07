@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Welcome back — Didoo's Evergreen Café" />
+  <title>Welcome Back — Didoo's Evergreen</title>
+  <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/pages/returning-customer.css" />
+</head>
+<body>
+<div class="shell">
+
+  <!-- 1. SAFE TOP — 44px -->
+  <div class="safe-top"></div>
+
+  <!-- 2. MENU LOGO SECTION — 390×144 -->
+  <header class="menu-component">
+    <img class="menu-logo" src="../assets/Welcome Logo.svg" alt="Didoo's Evergreen" />
+  </header>
+
+  <!-- 3. CUSTOMER DETAILS — 390×471 -->
+  <div class="rc-details">
+    <div class="rc-welcome">
+      <h1 class="rc-name">Welcome back, <span id="rcName">Guest</span></h1>
+      <p class="rc-sub">Great to see you again.</p>
+    </div>
+  </div>
+
+  <!-- 4. CONTINUE BUTTON — 390×77 -->
+  <div class="btn-content">
+    <button class="btn-primary" id="continueBtn">Let's Go</button>
+  </div>
+
+  <!-- 5. NOT YOU SECTION — 390×74 -->
+  <div class="rc-not-you">
+    <p class="rc-not-you-text">Not you? <span class="rc-tap-link" id="notYouBtn">Tap here</span></p>
+  </div>
+
+  <!-- 6. SAFE BOTTOM — 34px -->
+  <div class="safe-bottom"></div>
+
+</div>
+<script src="../js/navigation.js"></script>
+<script src="../js/pages/returning-customer.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+{
+  "breakfast": {
+    "Healthy": [
+      { "id": "brk_001", "name": "Healthy Yogurt (Makhana, Honey, Banana)", "price": 280, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_002", "name": "Fruit Yogurt with Honey", "price": 270, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_003", "name": "Muesli (Mixed Fruit with Yogurt & Honey)", "price": 290, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_004", "name": "Banana Honey Porridge", "price": 200, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Eggs": [
+      { "id": "brk_005", "name": "Plain Omelette", "price": 100, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_006", "name": "Mushroom Cheese Omelette", "price": 170, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_007", "name": "Potato Cheese Omelette", "price": 190, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_008", "name": "Fried or Scrambled Eggs", "price": 100, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_009", "name": "Masala Omelette", "price": 150, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_010", "name": "Masala Cheese Omelette", "price": 170, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_011", "name": "Chilly Cheese Omelette", "price": 170, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_012", "name": "Feta Mushroom Omelette", "price": 190, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Toast": [
+      { "id": "brk_013", "name": "Israeli Style Toast (Cheese, Tomato, Feta, Mushroom & Olive)", "price": 180, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_014", "name": "Cheese Tomato Chilly Toast", "price": 160, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_015", "name": "Masala Potato Cheese Toast", "price": 150, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_016", "name": "French Toast with Honey", "price": 150, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_017", "name": "Cheese Egg Toast", "price": 200, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "brk_018", "name": "Tofu Tomato Mushroom Olive Toast (Vegan)", "price": 180, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Big Breakfast": [
+      { "id": "bbk_001", "name": "American Breakfast (Grilled Chicken Sausages, Tomato, Mushroom, Eggs, Butter Jam & Bread)", "price": 330, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbk_002", "name": "Mexican Breakfast (Red Beans, Stir Fry Potato, Salad, Labaneh, Zaatar Naan)", "price": 300, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbk_003", "name": "Israeli Veg. Breakfast (Tofu Scrambled Mushroom, Tahina, Fries, Bucket)", "price": 300, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbk_004", "name": "Israeli Breakfast (Omelette, Chips, Salad, Labaneh, Butter Jam Toast)", "price": 300, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbk_005", "name": "Spanish Breakfast (Omelette, Stir Fry Potato, Salad, Butter Jam Toast)", "price": 300, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbk_006", "name": "English Breakfast (Omelette, Chicken Sausage, Stir Fry Potato, Butter Jam Toast)", "price": 330, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbk_007", "name": "Evergreen Special Combo Breakfast (Shakshuka, Chicken Sausages, Chicken Salami, Greek Salad, French Fries, Naan)", "price": 470, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "starters": {
+    "Salad": [
+      { "id": "sal_001", "name": "Israeli Salad with Green Pesto Chicken Steak", "price": 400, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sal_002", "name": "Israeli Salad with Tahina", "price": 270, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sal_003", "name": "Green Salad with Avocado", "price": 380, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sal_004", "name": "Greek Salad (Fried Mushroom, Olive, Veggies, Feta Cheese)", "price": 330, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sal_005", "name": "Vegetable Salad", "price": 130, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sal_006", "name": "Healthy Protein Salad (Beans, Nuts, Paneer, Veggies, Lemon, Mustard Dressing)", "price": 300, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Soups": [
+      { "id": "sop_001", "name": "Tofu Corn Soup", "price": 150, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_002", "name": "Cream of Mushroom Soup", "price": 150, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_003", "name": "Cream of Chicken Soup", "price": 180, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_004", "name": "Clear Veg. Soup", "price": 150, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_005", "name": "Clear Chicken Soup", "price": 180, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_006", "name": "Hot 'n' Sour Veg. Soup", "price": 150, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_007", "name": "Hot 'n' Sour Chicken Soup", "price": 180, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_008", "name": "Manchow Veg. Soup", "price": 150, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_009", "name": "Manchow Chicken Soup", "price": 180, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_010", "name": "Sweet Corn Veg. Soup", "price": 150, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_011", "name": "Sweet Corn Chicken Soup", "price": 180, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_012", "name": "Veg. Thupka", "price": 200, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_013", "name": "Chicken Thupka", "price": 250, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "sop_014", "name": "Lamb Thupka", "price": 300, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Appetisers": [
+      { "id": "app_001", "name": "French Fries", "price": 120, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "app_002", "name": "Masala French Fries", "price": 180, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Loaded Fries": [
+      { "id": "ldf_001", "name": "Honey Chilly Potato", "price": 300, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ldf_002", "name": "Cheese Fries (Pesto, Cream, Cheese)", "price": 300, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ldf_003", "name": "Fries with Cheese & Jalapeno", "price": 300, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ldf_004", "name": "Fries with Corn Cheese", "price": 300, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ldf_005", "name": "Fries with Lamb, Cheese & Jalapeno", "price": 400, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ldf_006", "name": "Mashed Potatoes (Cheese, Onion & Bruschetta)", "price": 300, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "mains": {
+    "Indian": [
+      { "id": "ind_001", "name": "Dal Makhani", "price": 250, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "assets/models/dish.glb?v=2", "image": "" },
+      { "id": "ind_002", "name": "Yellow Dal Fry", "price": 230, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_003", "name": "Shahi Paneer", "price": 370, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_004", "name": "Kadhai Paneer", "price": 380, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_005", "name": "Paneer Butter Masala", "price": 370, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_006", "name": "Channa Masala", "price": 260, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_007", "name": "Veg. Mix Masala", "price": 260, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_008", "name": "Chicken Curry", "price": 480, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_009", "name": "Kadhai Chicken", "price": 490, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_010", "name": "Butter Chicken (Half)", "price": 470, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_011", "name": "Butter Chicken (Full)", "price": 750, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_012", "name": "Lamb Curry", "price": 550, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_013", "name": "Lamb Curry Masala", "price": 570, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_014", "name": "Chicken Curry Masala", "price": 520, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_015", "name": "Egg Curry", "price": 350, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_016", "name": "Lamb Biryani (with Raita)", "price": 550, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_017", "name": "Chicken Biryani (with Raita)", "price": 480, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_018", "name": "Veg. Biryani (with Raita)", "price": 350, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_019", "name": "Jeera Rice", "price": 170, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_020", "name": "Plain Rice", "price": 110, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_021", "name": "Veg. Raita", "price": 120, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_022", "name": "Veg. Thali (Mix Veg., Dal, Raita, Rice, 2 Roti, Salad)", "price": 350, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_023", "name": "Veg. Korma", "price": 370, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_024", "name": "Chicken Thali (Dal, Chicken, Rice, 2 Roti, Salad, Raita)", "price": 450, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "ind_025", "name": "Lamb Thali (Mix Dal, Lamb, Rice, 2 Roti, Salad, Raita)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Chinese": [
+      { "id": "chn_001", "name": "Vegetable Chowmein", "price": 300, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_002", "name": "Chilli Garlic Noodles with Paneer", "price": 350, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_003", "name": "Mix Non-Veg. Chowmein", "price": 400, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_004", "name": "Chicken Fried Rice", "price": 400, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_005", "name": "Vegetable Fried Rice", "price": 300, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_006", "name": "Chilli Garlic Fried Rice", "price": 320, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_007", "name": "Paneer Chilly", "price": 420, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_008", "name": "Chilly Chicken", "price": 480, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_009", "name": "Israeli Style Honey Chicken with Rice", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "chn_010", "name": "Garlic Tofu with Rice", "price": 400, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "BBQ": [
+      { "id": "bbq_001", "name": "BBQ Veg. Platter (Paneer Satay, Mushroom, Hummus, Salad, Fries, Naan)", "price": 500, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_002", "name": "Pesto Grilled Potato with Hummus", "price": 380, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_003", "name": "Paneer Tikka", "price": 410, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_004", "name": "Veg. Sipodium (Tofu & Veg.)", "price": 400, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_005", "name": "BBQ Tandoori Platter (Tandoori Chicken, Chicken Sausages, Potato, Hummus, Chips, Salad, Naan)", "price": 900, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_006", "name": "Chicken Honey & Chilly", "price": 520, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_007", "name": "Mix Combo Plate (Lamb, Chicken, Mushroom)", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_008", "name": "Bar-Be-Que Chop Lamb", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_009", "name": "Chicken Sipodium", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_010", "name": "Chef's Special Kebab (Three Kinds of Chicken Kebabs)", "price": 520, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_011", "name": "Lamb Tikka", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_012", "name": "Lamb Sipodium", "price": 650, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bbq_013", "name": "Turkish Style Lamb Kebab (Minced Kebab, Tomato, Egg Plant, Chips, Salad & Hummus)", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Intercontinental": [
+      { "id": "con_001", "name": "Cottage Cheese Steak (Cream Mushroom Sauce, Rice & Bread)", "price": 500, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_002", "name": "BBQ Lamb Sizzler (Lamb, Veg., Chips & Rice)", "price": 650, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_003", "name": "Lamb Chops Butter Garlic Lemon Sauce (Rice, Bread & Fries)", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_004", "name": "Tofu Teriyaki (Japanese Style, Rice)", "price": 450, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_005", "name": "Grilled Chicken Sizzler (Rice & Fries)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_006", "name": "Broccoli Gratin (Cheese, Broccoli, Garlic Bread)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_007", "name": "Chef's Special Paneer Sizzler (Stuffed Paneer, Veggies, Chips, Rice & Corn)", "price": 480, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_008", "name": "Chicken Double Decker (Two Chicken Breast Stuffed with Cheese, Olive, Mushroom)", "price": 650, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_009", "name": "Chicken Steak Sizzler (Chicken Steak, Nuggets, Salami, Chips & Rice)", "price": 520, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_010", "name": "Lamb Pepper (Pepper Cream Sauce, Rice & Naan)", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "con_011", "name": "Steamed Chicken (Butter Garlic Sauce, Rice & Sauteed Vegetables)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Italian": [
+      { "id": "pas_001", "name": "Pasta a'la Vegetarian (Cream Sauce)", "price": 450, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_002", "name": "Alfredo (Cream Sauce)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_003", "name": "Arrabiata (Chilly, Onion, Mushroom, Bellpepper in Tomato Sauce)", "price": 410, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_004", "name": "A'la Feta (Cream, Feta, Cheese, Mushroom, Broccoli)", "price": 470, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_005", "name": "Chef's Special Veg. Pasta (Paneer, Corn, Tomato & Cream)", "price": 470, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_006", "name": "Pomodoro Freshco (Fresh Tomato, Mushroom, Cheese, Olive & Jalapeno)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_007", "name": "Green Pesto (Pesto & Cheese)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_008", "name": "Lamb Parmigiano Pasta", "price": 550, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_009", "name": "Pasta Italiano (Chicken Sausages, Chicken Salami, Crispy Fried Chicken, Cheese & Tomato)", "price": 550, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_010", "name": "Polo a'la Pesto Creama (Chicken, Cream Sauce, Pesto)", "price": 470, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_011", "name": "Bolognese (Lamb, Tomato Sauce)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_012", "name": "Salsa Rosa (Mix Sauce Pasta)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_013", "name": "Aglio Olio Peperoncino (Olive Oil, Garlic, Bellpepper, Chilly, Onion, Cheese)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_014", "name": "Pasta with Meat Bowl and Tomato", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_015", "name": "Chef's Special Lamb (Grilled Pineapple, Tomato, Onion, Capsicum, Pasta & Bread)", "price": 670, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_016", "name": "Mix Sipodium (Lamb, Chicken)", "price": 670, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_017", "name": "Honey Chilly Paneer & Potato", "price": 420, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_018", "name": "Tofu Mushroom Tomato Pesto Grilled", "price": 400, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_019", "name": "Lamb Kebab (Minced Lamb)", "price": 600, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "pas_020", "name": "Masala Cheese Maggi", "price": 220, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ], 
+    "Breads": [
+      { "id": "tnd_001", "name": "Plain Roti", "price": 25, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "tnd_002", "name": "Butter Roti", "price": 30, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "tnd_003", "name": "Plain Naan", "price": 40, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "tnd_004", "name": "Butter Garlic Naan", "price": 60, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "tnd_005", "name": "Onion Potato Naan", "price": 100, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "tnd_006", "name": "Cheese Garlic Naan", "price": 120, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "tnd_007", "name": "Paneer Naan", "price": 120, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "israeli": {
+    "Platters": [
+      { "id": "isr_001", "name": "Israeli Veg. Platter (BBQ Paneer, Mushroom, Falafel, Veg. Balls, Spinach Cheese Ball, Salad, Hummus, Chips)", "price": 550, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_002", "name": "Special Hummus Mix Plate (Hummus, Greek Salad, Crispy Cottage Cheese, Chips, Falafel)", "price": 450, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_008", "name": "Evergreen Special Platter (Falafel, Sum-Sum Schnitzel, Lamb, Hummus, Baba Ganoush, Salad, Fries, Naan)", "price": 670, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_009", "name": "Israeli Fried Non-Veg. Platter (Chicken Salami, Sausages, Schnitzel, Chips, Hummus & Pasta)", "price": 670, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_010", "name": "Combo Crispy Chicken Platter (Schnitzel, Hummus, Chips, Labaneh, Chicken Sipodium, Shakshuka, Salad, Naan)", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Mains": [
+      { "id": "isr_004", "name": "Falafel (Chips, Salad, Hummus, Naan)", "price": 400, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_005", "name": "Schnitzel (Chicken Breast, Chips, Salad, Hummus & Naan)", "price": 410, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_006", "name": "Sum-Sum Schnitzelonim (Deep Fried Diced Chicken in Roasted Sesame, Chips, Salad, Hummus, Naan)", "price": 430, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_007", "name": "Shakshuka (Poached Egg in Tomato Onion & Garlic Sauce, Chips, Salad, Hummus & Naan)", "price": 350, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_011", "name": "Lamb Israeli Style (Grilled Chop Lamb, Chips, Salad, Hummus, Falafel & Naan)", "price": 700, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_012", "name": "Tofu Schnitzel (Chips, Salad, Hummus, Naan)", "price": 400, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_013", "name": "Jerusalem Mix (Chicken, Mushroom, Lamb, Onion Brown Sauce, Chips, Salad, Hummus & Naan)", "price": 600, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Hummus": [
+      { "id": "isr_017", "name": "Plain Hummus Naan", "price": 180, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_018", "name": "Pesto Hummus Naan", "price": 230, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_020", "name": "Hummus with Mushroom Onion & Naan", "price": 280, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_016", "name": "Hummus with Minced Chicken", "price": 350, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_021", "name": "Hummus with Chicken Sausages", "price": 320, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_015", "name": "Hummus with Chicken Sipodium", "price": 400, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_019", "name": "Pesto Hummus with Lamb & Naan", "price": 400, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "isr_014", "name": "Hummus with Lamb Ball", "price": 450, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Dips": [
+      { "id": "isr_003", "name": "Baba Ganoush (Grilled Egg Plant, Tahina Chilly Dip, Zaatar Naan)", "price": 350, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "bakes": {
+    "Pizza": [
+      { "id": "piz_001", "name": "Margherita (Cheese, Tomato)", "price": 390, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_002", "name": "Arrabiata (Cheese, Tomato, Onion, Mushroom, Chilli, Bellpepper)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_003", "name": "BBQ Paneer Corn Pizza", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_004", "name": "Piccante (Jalapeno, Cheese, Tomato, Olive)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_005", "name": "Cipolla (Cheese, Tomato, Onion)", "price": 400, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_006", "name": "Evergreen Special Pizza (Chicken, Sipud, Sausages, Jalapeno, Cheese)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_007", "name": "BBQ Veg. Pizza", "price": 470, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_008", "name": "BBQ Chicken Pizza", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_009", "name": "Chicken Salami Pizza (Chicken Salami, Olive, Cheese)", "price": 450, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_010", "name": "Polo Pizza (Chicken, Olive, Cheese)", "price": 460, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_011", "name": "Greek Pizza (Chicken, Feta, Olive)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_012", "name": "Lamb Pizza (Lamb & Cheese)", "price": 550, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "piz_013", "name": "Pineapple Corn Pizza", "price": 420, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Lasagne": [
+      { "id": "las_001", "name": "Lasagne (Cheese, Tomato, Mushroom, Onion, Jalapeno)", "price": 430, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "las_002", "name": "Lasagne (Paneer, Mushroom, Capsicum, Corn & Olive)", "price": 450, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "las_003", "name": "Lasagne (Creamy Spinach & Corn)", "price": 450, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "las_004", "name": "Lasagne (Lamb)", "price": 500, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "las_005", "name": "Lasagne (Chicken)", "price": 470, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "las_006", "name": "Lasagne Evergreen Special (Crispy Chicken & Sausages)", "price": 520, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "sandwiches": {
+    "Sandwiches": [
+      { "id": "san_001", "name": "Veg. Cheese Sandwich", "price": 220, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_002", "name": "Paneer Chilly Cheese Sandwich", "price": 250, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_003", "name": "Chicken Salami Sandwich (Salami, Sausage, Cheese)", "price": 300, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_004", "name": "Omelette Cheese Sandwich", "price": 250, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_005", "name": "Tofu Tomato Chilly Sandwich (Vegan)", "price": 250, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_006", "name": "Avocado Omelette Sandwich", "price": 280, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_007", "name": "Avocado Sandwich", "price": 250, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_008", "name": "Chicken Sandwich", "price": 300, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_009", "name": "Lamb Sandwich", "price": 350, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "san_010", "name": "Avocado Schnitzel Sandwich", "price": 350, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "burgers": {
+    "Burgers": [
+      { "id": "bur_001", "name": "Veg. Cheese Burger", "price": 230, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_002", "name": "Double Cheese Burger (Veg.)", "price": 320, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_003", "name": "Double Cheese Burger (Chicken)", "price": 390, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_004", "name": "Paneer Cheese Burger", "price": 280, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_005", "name": "Falafel Burger", "price": 280, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_006", "name": "Chicken Burger", "price": 280, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_007", "name": "Western Style Lamb Burger (Fried Egg, Cheese, Chicken Salami)", "price": 390, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_008", "name": "Western Style Chicken Burger (Fried Egg, Cheese, Chicken Salami)", "price": 360, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_009", "name": "Evergreen Special King Burger (Chicken, Lamb, Veg. Patties, Coleslaw, Fries)", "price": 430, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bur_010", "name": "Schnitzel Burger", "price": 350, "veg": false, "dietary": "non-veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "drinks": {
+    "Hot": [
+      { "id": "bev_001", "name": "Cappuccino", "price": 200, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_002", "name": "Espresso", "price": 100, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_003", "name": "Double Espresso", "price": 140, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_004", "name": "Latte", "price": 200, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_005", "name": "Mocha", "price": 250, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_006", "name": "Kahwa (Herbal Hot Drink)", "price": 110, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_007", "name": "Ginger Lemon Honey Tea", "price": 90, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_008", "name": "Cinnamon Lemon / Mint Tea", "price": 50, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_009", "name": "Chai", "price": 50, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_010", "name": "Coffee (Milk)", "price": 90, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_011", "name": "Coffee (Black)", "price": 60, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_012", "name": "Americano", "price": 140, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_013", "name": "Hot Chocolate with Nutella", "price": 220, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Cold": [
+      { "id": "bev_014", "name": "Coffee Shake with Ice Cream", "price": 250, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_015", "name": "Oreo Shake with Ice Cream", "price": 250, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_021", "name": "Fresh Lime Soda (Sweet)", "price": 80, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_022", "name": "Lemon Ice Tea", "price": 180, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_023", "name": "Peach Ice Tea", "price": 180, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_024", "name": "Mint Mojito", "price": 180, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_025", "name": "Limonana", "price": 230, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_027", "name": "Soft Drinks", "price": 50, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_028", "name": "Mineral Water", "price": 30, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Smoothies": [
+      { "id": "bev_016", "name": "Banana Coconut Smoothie", "price": 200, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_017", "name": "Banana Honey Soya Milk Smoothie", "price": 200, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_018", "name": "Banana Nutella Smoothie", "price": 250, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_019", "name": "Peanut Butter Smoothie (Vegan)", "price": 230, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "bev_020", "name": "Avocado Smoothie", "price": 260, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ],
+    "Juices": [
+      { "id": "bev_026", "name": "Seasonal Fresh Fruit Juice", "price": 230, "veg": true, "dietary": "vegan", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  },
+  "desserts": {
+    "Desserts": [
+      { "id": "des_001", "name": "Ice Cream", "price": 120, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_002", "name": "Fruit Cream", "price": 260, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_003", "name": "Shalom La Malika (Hello to the Queen)", "price": 260, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_004", "name": "Banana Fritter with Nutella & Ice Cream", "price": 260, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_005", "name": "Nutella Pancake with Ice Cream", "price": 260, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_006", "name": "Africano", "price": 260, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_007", "name": "Nutella Toast", "price": 120, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" },
+      { "id": "des_008", "name": "Milky Bar Chapati", "price": 120, "veg": true, "dietary": "veg", "available": true, "spice_level": "mild", "description": "", "glb": "", "image": "" }
+    ]
+  }
+}
